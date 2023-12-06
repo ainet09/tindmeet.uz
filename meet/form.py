@@ -1,0 +1,10 @@
+# myapp/forms.py
+from django import forms
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    theme = forms.CharField(max_length=1000)
+    message = forms.CharField(widget=forms.Textarea)
+

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from docs.tindmeet.ru/base/sozdanie-ankety by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Dec 2023 04:46:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        />
+        <style>
+            /* This is needed because the page cover bleed (100vw) will cause horizontal scrolling */
+            /* FIXME: use :has once it is ready for Firefox and lift these back to PageSheetView.module.css */
+            html,
+            body{
+                overflow-x: clip;
+            }
+
+            body.theme-overlay {
+                position: fixed;
+                width: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--theme-overlay-background);
+                z-index: 10000;
+            }
+
+            .gitbook-splashscreen {
+                view-transition-name: splashscreen;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+            }
+            .slate-spacer {
+                height: 0;
+                color: transparent;
+                outline: none;
+                position: absolute;
+            }
+
+            ::view-transition-old(splashscreen), ::view-transition-new(splashscreen) {
+                animation-duration: 300ms;
+            }
+        </style>
+        <title>Создание анкеты - Tind Meet - Знакомства</title>
+        <style id="__style-root-primary-color" type="text/css">:root {
+            --custom-theme-color-primary-xxlight: #cddaf6;
+               stom-theme-color-primary-xxdark: #1a202b;
+                  }
+            </style>
+    <link rel="preload" as="font" type="font/woff2" href="" crossorigin="anonymous"/><link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-BoldItalic.woff2?v=3.21" crossorigin="anonymous"/><link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-MediumItalic.woff2?v=3.21" crossorigin="anonymous"/><link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-RegularItalic.woff2?v=3.21" crossorigin="anonymous"/><style id="__font-ABCFavorit-gitbook-content-font">@font-face {
+            font-family: 'gitbook-content-font';
+            font-style:  normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: local("Favorit Variable"), local("ABCFavorit-Variable"), url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-Variable.woff2?v=3.21") format("woff2"),
+                    url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-Variable.woff?v=3.21") format("woff");
+        }
+@font-face {
+            font-family: 'gitbook-content-font';
+            font-style:  italic;
+            font-weight: 700;
+            font-display: swap;
+            src: local("Favorit BoldItalic"), local("ABCFavorit-BoldItalic"), url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-BoldItalic.woff2?v=3.21") format("woff2"),
+                    url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-BoldItalic.woff?v=3.21") format("woff");
+        }
+@font-face {
+            font-family: 'gitbook-content-font';
+            font-style:  italic;
+            font-weight: 500;
+            font-display: swap;
+            src: local("Favorit MediumItalic"), local("ABCFavorit-MediumItalic"), url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-MediumItalic.woff2?v=3.21") format("woff2"),
+                    url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-MediumItalic.woff?v=3.21") format("woff");
+        }
+@font-face {
+            font-family: 'gitbook-content-font';
+            font-style:  italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local("Favorit RegularItalic"), local("ABCFavorit-RegularItalic"), url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-RegularItalic.woff2?v=3.21") format("woff2"),
+                    url("https://app.gitbook.com/public/fonts/ABCFavorit/ABCFavorit-RegularItalic.woff?v=3.21") format("woff");
+        }</style><meta name="description" content="Инструкция по созданию анкеты в сервисе знакомств Tind Meet" id="__meta-description"/><meta name="og:description" content="Инструкция по созданию анкеты в сервисе знакомств Tind Meet" id="__meta-og:description"/><meta name="og:image" content="https://app.gitbook.com/share/space/thumbnail/Lcg6wJ8cGQ7PVASLE7S2/page/CqBZrC5k5Si8x5bGvG2y.png?color=%23346DDB&amp;logo=&amp;theme=default" id="__meta-og:image"/><meta name="twitter:card" content="summary_large_image" id="__meta-twitter:card"/><meta name="og:title" content="Создание анкеты" id="__meta-og:title"/><meta name="twitter:site" content="Tind Meet - Знакомства" id="__meta-twitter:site"/><meta name="robots" content="index" id="__meta-robots"/><link rel="icon" href="https://app.gitbook.com/public/emojis/1f49e.png?v=6.0.0" id="__link-icon"/><link rel="apple-touch-icon" href="https://app.gitbook.com/public/emojis/1f49e.png?v=6.0.0"/><link rel="stylesheet" href="https://app.gitbook.com/public/emojis/emoji-assets-sprite.css?v=6.0.0" type="text/css" media="all"/>
+                
+                <script type="module" defer src="https://app.gitbook.com/public/app/public-XPTTZPEO.min.js?v=10.9.504-4b0a8b2dd63c0875252b185e926adba2d34bc20b-7062782170"></script>
+                <link as="style" rel="preload" href="https://app.gitbook.com/public/app/public-JOY4SZ7G.css?v=10.9.504-4b0a8b2dd63c0875252b185e926adba2d34bc20b-7062782170">
+                <link rel="stylesheet" href="https://app.gitbook.com/public/app/public-JOY4SZ7G.css?v=10.9.504-4b0a8b2dd63c0875252b185e926adba2d34bc20b-7062782170">
+                <style id="react-native-stylesheet">[stylesheet-group="0"]{}
+body{margin:0;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input::-webkit-search-cancel-button,input::-webkit-search-decoration,input::-webkit-search-results-button,input::-webkit-search-results-decoration{display:none;}
+[stylesheet-group="1"]{}
+.css-11aywtz{-moz-appearance:textfield;-webkit-appearance:none;background-color:rgba(0,0,0,0.00);border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px;border:0 solid black;box-sizing:border-box;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0px;padding:0px;resize:none;}
+.css-175oi2r{align-items:stretch;background-color:rgba(0,0,0,0.00);border:0 solid black;box-sizing:border-box;display:flex;flex-basis:auto;flex-direction:column;flex-shrink:0;list-style:none;margin:0px;min-height:0px;min-width:0px;padding:0px;position:relative;text-decoration:none;z-index:0;}
+.css-1qaijid{background-color:rgba(0,0,0,0.00);border:0 solid black;box-sizing:border-box;color:inherit;display:inline;font:inherit;list-style:none;margin:0px;padding:0px;text-align:inherit;text-decoration:none;white-space:inherit;word-wrap:break-word;}
+.css-1rynq56{background-color:rgba(0,0,0,0.00);border:0 solid black;box-sizing:border-box;color:rgba(0,0,0,1.00);display:inline;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;list-style:none;margin:0px;padding:0px;text-align:inherit;text-decoration:none;white-space:pre-wrap;word-wrap:break-word;}
+.css-9pa8cd{bottom:0px;height:100%;left:0px;opacity:0;position:absolute;right:0px;top:0px;width:100%;z-index:-1;}
+[stylesheet-group="2"]{}
+.r-1064s9p{margin:4px;}
+.r-11mg6pl{border-bottom-color:rgba(255,255,255,1.00);border-left-color:rgba(255,255,255,1.00);border-right-color:rgba(255,255,255,1.00);border-top-color:rgba(255,255,255,1.00);}
+.r-13awgt0{flex:1;}
+.r-13fxbef{border-bottom-color:rgba(211,61,61,1.00);border-left-color:rgba(211,61,61,1.00);border-right-color:rgba(211,61,61,1.00);border-top-color:rgba(211,61,61,1.00);}
+.r-1471scf{display:inline;}
+.r-156hn8l{border-bottom-color:rgba(211,220,228,1.00);border-left-color:rgba(211,220,228,1.00);border-right-color:rgba(211,220,228,1.00);border-top-color:rgba(211,220,228,1.00);}
+.r-17gur6a{border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px;}
+.r-18c69zk{border-bottom-left-radius:100px;border-bottom-right-radius:100px;border-top-left-radius:100px;border-top-right-radius:100px;}
+.r-190qawg{border-bottom-color:rgba(227,232,237,1.00);border-left-color:rgba(227,232,237,1.00);border-right-color:rgba(227,232,237,1.00);border-top-color:rgba(227,232,237,1.00);}
+.r-19dn8jc{border-bottom-color:rgba(104,60,17,1.00);border-left-color:rgba(104,60,17,1.00);border-right-color:rgba(104,60,17,1.00);border-top-color:rgba(104,60,17,1.00);}
+.r-1awa8pu{border-bottom-color:rgba(101,119,134,1.00);border-left-color:rgba(101,119,134,1.00);border-right-color:rgba(101,119,134,1.00);border-top-color:rgba(101,119,134,1.00);}
+.r-1c57tb8{border-bottom-left-radius:34px;border-bottom-right-radius:34px;border-top-left-radius:34px;border-top-right-radius:34px;}
+.r-1d4xg89{border-bottom-color:rgba(170,184,194,1.00);border-left-color:rgba(170,184,194,1.00);border-right-color:rgba(170,184,194,1.00);border-top-color:rgba(170,184,194,1.00);}
+.r-1dqxon3{overflow-x:auto;overflow-y:auto;}
+.r-1edjr5w{padding:80px;}
+.r-1fdo3w0{margin:16px;}
+.r-1fuqb1j{border-bottom-left-radius:24px;border-bottom-right-radius:24px;border-top-left-radius:24px;border-top-right-radius:24px;}
+.r-1j16mh1{border-bottom-left-radius:100%;border-bottom-right-radius:100%;border-top-left-radius:100%;border-top-right-radius:100%;}
+.r-1jkafct{border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px;}
+.r-1jyn79y{border-bottom-color:rgba(0,150,136,1.00);border-left-color:rgba(0,150,136,1.00);border-right-color:rgba(0,150,136,1.00);border-top-color:rgba(0,150,136,1.00);}
+.r-1p0fg95{border-bottom-color:rgba(245,247,249,1.00);border-left-color:rgba(245,247,249,1.00);border-right-color:rgba(245,247,249,1.00);border-top-color:rgba(245,247,249,1.00);}
+.r-1phboty{border-bottom-style:solid;border-left-style:solid;border-right-style:solid;border-top-style:solid;}
+.r-1rwzld0{border-bottom-color:rgba(11,79,47,1.00);border-left-color:rgba(11,79,47,1.00);border-right-color:rgba(11,79,47,1.00);border-top-color:rgba(11,79,47,1.00);}
+.r-1tgwseu{border-bottom-color:rgba(52,109,219,1.00);border-left-color:rgba(52,109,219,1.00);border-right-color:rgba(52,109,219,1.00);border-top-color:rgba(52,109,219,1.00);}
+.r-1udh08x{overflow-x:hidden;overflow-y:hidden;}
+.r-1ufqoot{border-bottom-color:rgba(20,23,28,1.00);border-left-color:rgba(20,23,28,1.00);border-right-color:rgba(20,23,28,1.00);border-top-color:rgba(20,23,28,1.00);}
+.r-1w1o3af{border-bottom-color:rgba(251,232,240,1.00);border-left-color:rgba(251,232,240,1.00);border-right-color:rgba(251,232,240,1.00);border-top-color:rgba(251,232,240,1.00);}
+.r-1wgstfn{border-bottom-style:none;border-left-style:none;border-right-style:none;border-top-style:none;}
+.r-1x0lp8v{border-bottom-color:rgba(220,238,244,1.00);border-left-color:rgba(220,238,244,1.00);border-right-color:rgba(220,238,244,1.00);border-top-color:rgba(220,238,244,1.00);}
+.r-1xc7w19{border-bottom-color:rgba(0,0,0,1.00);border-left-color:rgba(0,0,0,1.00);border-right-color:rgba(0,0,0,1.00);border-top-color:rgba(0,0,0,1.00);}
+.r-1xfd6ze{border-bottom-left-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:8px;border-top-right-radius:8px;}
+.r-1xutcf9{padding:40px;}
+.r-1yadl64{border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;}
+.r-42olwf{border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-top-color:rgba(0,0,0,0.00);}
+.r-4a18lf{border-bottom-color:rgba(255,0,0,1.00);border-left-color:rgba(255,0,0,1.00);border-right-color:rgba(255,0,0,1.00);border-top-color:rgba(255,0,0,1.00);}
+.r-4qtqp9{display:inline-block;}
+.r-60ke3l{border-bottom-color:rgba(0,128,0,1.00);border-left-color:rgba(0,128,0,1.00);border-right-color:rgba(0,128,0,1.00);border-top-color:rgba(0,128,0,1.00);}
+.r-6578ry{margin:40px;}
+.r-6koalj{display:flex;}
+.r-6ncur5{border-bottom-left-radius:18px;border-bottom-right-radius:18px;border-top-left-radius:18px;border-top-right-radius:18px;}
+.r-6t2glc{border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px;}
+.r-9x6qib{border-bottom-color:rgba(204,214,221,1.00);border-left-color:rgba(204,214,221,1.00);border-right-color:rgba(204,214,221,1.00);border-top-color:rgba(204,214,221,1.00);}
+.r-ancj0c{border-bottom-color:rgba(218,212,255,1.00);border-left-color:rgba(218,212,255,1.00);border-right-color:rgba(218,212,255,1.00);border-top-color:rgba(218,212,255,1.00);}
+.r-by8dw1{margin:24px;}
+.r-bztko3{overflow-x:visible;overflow-y:visible;}
+.r-cdmcib{border-bottom-left-radius:3px;border-bottom-right-radius:3px;border-top-left-radius:3px;border-top-right-radius:3px;}
+.r-cpet4d{border-bottom-left-radius:999px;border-bottom-right-radius:999px;border-top-left-radius:999px;border-top-right-radius:999px;}
+.r-crgep1{margin:0px;}
+.r-d045u9{border-bottom-width:2px;border-left-width:2px;border-right-width:2px;border-top-width:2px;}
+.r-d23pfw{padding:24px;}
+.r-dta0w2{flex:2;}
+.r-edyy15{padding:8px;}
+.r-eg6o18{border-bottom-style:dashed;border-left-style:dashed;border-right-style:dashed;border-top-style:dashed;}
+.r-egco7n{border-bottom-color:rgba(253,195,137,1.00);border-left-color:rgba(253,195,137,1.00);border-right-color:rgba(253,195,137,1.00);border-top-color:rgba(253,195,137,1.00);}
+.r-fx7oqy{border-bottom-color:rgba(0,0,255,1.00);border-left-color:rgba(0,0,255,1.00);border-right-color:rgba(0,0,255,1.00);border-top-color:rgba(0,0,255,1.00);}
+.r-hvic4v{display:none;}
+.r-hwh8t1{margin:8px;}
+.r-jqra5g{border-bottom-color:rgba(55,65,81,1.00);border-left-color:rgba(55,65,81,1.00);border-right-color:rgba(55,65,81,1.00);border-top-color:rgba(55,65,81,1.00);}
+.r-jxo161{border-bottom-color:rgba(255,204,203,1.00);border-left-color:rgba(255,204,203,1.00);border-right-color:rgba(255,204,203,1.00);border-top-color:rgba(255,204,203,1.00);}
+.r-kdyh1x{border-bottom-left-radius:6px;border-bottom-right-radius:6px;border-top-left-radius:6px;border-top-right-radius:6px;}
+.r-krxsd3{display:-webkit-box;}
+.r-m2nopt{border-bottom-color:rgba(43,46,57,1.00);border-left-color:rgba(43,46,57,1.00);border-right-color:rgba(43,46,57,1.00);border-top-color:rgba(43,46,57,1.00);}
+.r-m7id7e{flex:unset;}
+.r-m9k8lk{border-bottom-color:rgba(223,255,240,1.00);border-left-color:rgba(223,255,240,1.00);border-right-color:rgba(223,255,240,1.00);border-top-color:rgba(223,255,240,1.00);}
+.r-nsbfu8{padding:16px;}
+.r-p4pd8u{border-bottom-color:rgba(36,42,49,1.00);border-left-color:rgba(36,42,49,1.00);border-right-color:rgba(36,42,49,1.00);border-top-color:rgba(36,42,49,1.00);}
+.r-qwd59z{border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px;}
+.r-rs99b7{border-bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;}
+.r-t60dpp{padding:0px;}
+.r-texgdz{margin:80px;}
+.r-tuq35u{padding:4px;}
+.r-tyhe3k{border-bottom-left-radius:64px;border-bottom-right-radius:64px;border-top-left-radius:64px;border-top-right-radius:64px;}
+.r-xoduu5{display:inline-flex;}
+.r-xyw6el{padding:12px;}
+.r-ywje51{margin:auto;}
+.r-z2wwpe{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top-left-radius:4px;border-top-right-radius:4px;}
+.r-zhp00w{padding:2px;}
+[stylesheet-group="2.1"]{}
+.r-10x3wzx{padding-bottom:40px;padding-top:40px;}
+.r-11yq8vr{margin-left:40px;margin-right:40px;}
+.r-1e081e0{padding-left:12px;padding-right:12px;}
+.r-1guathk{padding-left:24px;padding-right:24px;}
+.r-1h4fu65{padding-bottom:24px;padding-top:24px;}
+.r-1hy1u7s{margin-left:24px;margin-right:24px;}
+.r-1isdzm1{padding-left:80px;padding-right:80px;}
+.r-1jgb5lz{margin-left:auto;margin-right:auto;}
+.r-1p02zvt{padding-left:48px;padding-right:48px;}
+.r-1p4rafz{padding-left:2px;padding-right:2px;}
+.r-1p6iasa{margin-bottom:4px;margin-top:4px;}
+.r-1pn2ns4{padding-left:8px;padding-right:8px;}
+.r-1r5su4o{margin-bottom:16px;margin-top:16px;}
+.r-1unineu{margin-bottom:40px;margin-top:40px;}
+.r-1w3m5we{padding-bottom:80px;padding-top:80px;}
+.r-1ybube5{margin-left:8px;margin-right:8px;}
+.r-1ydw1k6{margin-left:16px;margin-right:16px;}
+.r-1yzf0co{padding-bottom:16px;padding-top:16px;}
+.r-4amgru{margin-left:4px;margin-right:4px;}
+.r-5njf8e{padding-bottom:8px;padding-top:8px;}
+.r-5wp0in{padding-left:40px;padding-right:40px;}
+.r-c8eef1{margin-bottom:8px;margin-top:8px;}
+.r-g4w12b{padding-left:94px;padding-right:94px;}
+.r-g8va3u{margin-left:80px;margin-right:80px;}
+.r-mk0yit{padding-left:0px;padding-right:0px;}
+.r-mvpalk{margin-left:0px;margin-right:0px;}
+.r-oyd9sg{padding-bottom:4px;padding-top:4px;}
+.r-pw2am6{margin-bottom:24px;margin-top:24px;}
+.r-r0h9e2{margin-bottom:0px;margin-top:0px;}
+.r-r26ds4{margin-bottom:80px;margin-top:80px;}
+.r-rjfia{padding-bottom:0px;padding-top:0px;}
+.r-s1qlax{padding-left:4px;padding-right:4px;}
+.r-ymttw5{padding-left:16px;padding-right:16px;}
+[stylesheet-group="2.2"]{}
+.r-100vyta{margin-top:7px;}
+.r-1029d6i{top:-24px;}
+.r-105ug2t{pointer-events:auto!important;}
+.r-109y4c4{height:1px;}
+.r-10kz8ia{color:rgba(228,79,137,1.00);}
+.r-10ptun7{height:16px;}
+.r-10pyoum{color:rgba(5,5,5,1.00);}
+.r-10x49cs{font-size:10px;}
+.r-10xqauy{padding-top:env(safe-area-inset-top);}
+.r-111w7nw{box-shadow:0px 1px 2px rgba(0,0,0,0.69);}
+.r-113qch9{cursor:auto;}
+.r-116b19x{padding-left:40px;}
+.r-119vxgs{border-top-style:dashed;}
+.r-11c0sde{margin-top:24px;}
+.r-11f42r{height:314px;}
+.r-11g3r6m{padding-right:24px;}
+.r-11j9u27{visibility:hidden;}
+.r-11mo1y0{margin-bottom:7px;}
+.r-11mpjr4{background-color:rgba(223,223,223,1.00);}
+.r-11udlyb{background-color:rgba(0,150,136,1.00);}
+.r-11vxtcu{background-color:rgba(211,220,228,1.00);}
+.r-11wrixw{margin-left:0px;}
+.r-11xdecz{max-width:233px;}
+.r-11yh6sk{overflow-x:hidden;}
+.r-11ys0m{-webkit-break-before:auto;break-before:auto;}
+.r-123mryc{color:rgba(185,94,4,1.00);}
+.r-127358a{animation-name:r-9p3sdl;}
+.r-127gp16{max-width:150px;}
+.r-12dqhl9{height:calc(100vh - 80px);}
+.r-12mrs02{object-fit:contain;}
+.r-12vffkv>*{pointer-events:auto;}
+.r-12vffkv{pointer-events:none!important;}
+.r-12ym1je{width:18px;}
+.r-12zb1j4{margin-right:7px;}
+.r-135wba7{line-height:24px;}
+.r-13gfk22{animation-delay:250ms;}
+.r-13hce6t{margin-left:4px;}
+.r-13i40vn{box-shadow:0px 12px 13px rgba(0,0,0,0.02);}
+.r-13l2t4g{border-right-width:1px;}
+.r-13ll0g2{color:rgba(10,48,105,1.00);}
+.r-13lvk87{margin-left:110px;}
+.r-13qz1uu{width:100%;}
+.r-13tjlyg{transition-duration:0.1s;}
+.r-13yb0iz{outline-color:#347185;}
+.r-13yce4e{border-top-width:0px;}
+.r-142tt33{-webkit-text-decoration-line:line-through;text-decoration-line:line-through;}
+.r-144uupt{left:2px;}
+.r-146iojx{max-width:300px;}
+.r-1472mwg{height:24px;}
+.r-14bkmb3{bottom:-3px;}
+.r-14eup4l{top:3px;}
+.r-14gqq1x{margin-top:4px;}
+.r-14lw9ot{background-color:rgba(255,255,255,1.00);}
+.r-14sbq61{background-color:rgba(33,150,243,1.00);}
+.r-14utu6a{line-height:8px;}
+.r-14vq63g{background-color:rgba(3,58,22,1.00);}
+.r-14yzgew{line-height:18px;}
+.r-150rngu{-webkit-overflow-scrolling:touch;}
+.r-157h22z{background-color:rgba(45,50,58,1.00);}
+.r-15g7tld{margin-bottom:80px;}
+.r-15m1z73{margin-left:40px;}
+.r-15m68ww{color:rgba(137,198,218,1.00);}
+.r-15o5oer{bottom:auto;}
+.r-15ysp7h{min-height:32px;}
+.r-15zivkp{margin-bottom:4px;}
+.r-16dba41{font-weight:400;}
+.r-16l9doz{height:auto;}
+.r-16y2uox{flex-grow:1;}
+.r-173mn98{align-self:flex-end;}
+.r-1777fci{justify-content:center;}
+.r-17bb2tj{animation-duration:0.75s;}
+.r-17giqoz{box-shadow:0px 0px 7px rgba(0,0,0,0.52);}
+.r-17grq5a{margin-right:-8px;}
+.r-17leim2{background-repeat:repeat;}
+.r-17mnkfo{background-color:var(--sp-color-button-upgrade-bg-default);}
+.r-17rnw9f{line-height:30px;}
+.r-17s6mgv{justify-content:flex-end;}
+.r-17tb59b{opacity:0.7;}
+.r-17tloay{opacity:0.6;}
+.r-17wrw06{color:rgba(180,26,26,1.00);}
+.r-184en5c{z-index:1;}
+.r-18ayb63{border-right-color:rgba(227,232,237,1.00);}
+.r-18kxxzh{flex-grow:0;}
+.r-18nhz7w{top:-3px;}
+.r-18p6if4{border-right-width:2px;}
+.r-18u37iz{flex-direction:row;}
+.r-18y5qoh{color:rgba(165,214,255,1.00);}
+.r-190thrv{color:rgba(145,75,5,1.00);}
+.r-19554kt{width:90px;}
+.r-19akecc{color:rgba(175,245,180,1.00);}
+.r-19byhck{flex-basis:32%;}
+.r-19lq7b1{top:16px;}
+.r-19r33im{letter-spacing:1.2px;}
+.r-19tq15n{margin-top:80px;}
+.r-19wmn03{width:20px;}
+.r-19z077z{touch-action:none;}
+.r-1a3cspq{background-color:rgba(40,49,67,1.00);}
+.r-1abnn5w{animation-play-state:paused;}
+.r-1acpoxo{width:36px;}
+.r-1adewhw{padding-bottom:76px;}
+.r-1aerykh{border-top-color:rgba(211,220,228,1.00);}
+.r-1ais5m6{transform:rotate(90deg);}
+.r-1aockid{width:40px;}
+.r-1armvtb{font-size:8px;}
+.r-1awozwy{align-items:center;}
+.r-1axcl7z{border:1px solid #d3dce4;}
+.r-1ay1djp{animation-duration:1s;}
+.r-1b00too{background-color:rgba(236,239,241,1.00);}
+.r-1b096ap{border-bottom-color:rgba(36,42,49,1.00);}
+.r-1b1g84l{bottom:-8px;}
+.r-1b43r93{font-size:14px;}
+.r-1bcbbo8{color:rgba(17,99,41,1.00);}
+.r-1bnj018{color:rgba(92,105,117,1.00);}
+.r-1bwbpp8{color:rgba(57,87,148,1.00);}
+.r-1c681wc{color:rgba(77,222,152,1.00);}
+.r-1c6unfx{forced-color-adjust:none;}
+.r-1ce3o0f{max-height:80vh;}
+.r-1ceczpf{min-height:24px;}
+.r-1clhhh9{-moz-transition-property:all;-webkit-transition-property:all;transition-property:all;}
+.r-1cmwbt1{gap:8px;}
+.r-1d09ksm{align-items:baseline;}
+.r-1d2f490{left:0px;}
+.r-1d4mawv{margin-right:4px;}
+.r-1d5kdc7{flex-direction:column-reverse;}
+.r-1d7fvdj{justify-content:space-evenly;}
+.r-1d9grui{border-bottom-color:rgba(211,220,228,1.00);}
+.r-1ddef8g{-webkit-text-decoration-line:underline;text-decoration-line:underline;}
+.r-1dernwh{height:70%;}
+.r-1dlgt49{max-height:30px;}
+.r-1dmvmgl{background-color:rgba(36,42,49,1.00);}
+.r-1dn12g7{line-height:48px;}
+.r-1dpl46z{border-bottom-right-radius:4px;}
+.r-1dqbpge{cursor:text;}
+.r-1dumtqg{background-color:rgba(253,195,137,1.00);}
+.r-1e1gmzv{color:rgba(38,59,102,1.00);}
+.r-1efo1hp{border-bottom-color:rgba(43,46,57,1.00);}
+.r-1ei5mc7{cursor:inherit;}
+.r-1eic64l{color:rgba(198,44,104,1.00);}
+.r-1enofrn{font-size:12px;}
+.r-1euycsn{flex-direction:row-reverse;}
+.r-1ewcgjf{box-shadow:0px 1px 3px rgba(0,0,0,0.5);}
+.r-1f2v84d{color:rgba(204,207,212,1.00);}
+.r-1f529hi{line-height:14px;}
+.r-1f77ubx{padding-bottom:var(--sp-spacing-300);}
+.r-1fd96xs{padding-left:50px;}
+.r-1fdih9r{gap:24px;}
+.r-1fe0xdi{left:0%;}
+.r-1ff274t{text-align:right;}
+.r-1fi01yr{background-color:rgba(55,65,81,1.00);}
+.r-1fiaf3z{opacity:0.05;}
+.r-1fo40xd{top:80px;}
+.r-1fq43b1{flex-basis:100%;}
+.r-1g7fiml{height:30px;}
+.r-1g80fh1{margin-right:80px;}
+.r-1ghhsy9{color:rgba(52,109,219,1.00);}
+.r-1gigy5k{border-bottom-color:rgba(45,50,58,1.00);}
+.r-1glc72y{border-bottom-color:rgba(245,247,249,1.00);}
+.r-1glkqn6{width:80px;}
+.r-1h0z5md{justify-content:flex-start;}
+.r-1h2t8mc{width:0px;}
+.r-1h815vi{right:92%;}
+.r-1h8ys4a{padding-top:4px;}
+.r-1h9q8wt{color:rgba(69,69,69,1.00);}
+.r-1habvwh{align-items:flex-start;}
+.r-1hjwoze{height:18px;}
+.r-1hlnpa{height:3px;}
+.r-1hpgsb4{;}
+.r-1hqdnve{box-shadow:0px 0px 4px inset rgba(0,0,0, 0.08);}
+.r-1hrvmjx{border-top-color:rgba(55,65,81,1.00);}
+.r-1hvjb8t{padding-right:4px;}
+.r-1hy97zq{padding-top:80px;}
+.r-1i6wzkk{-moz-transition-property:opacity;-webkit-transition-property:opacity;transition-property:opacity;}
+.r-1i7sdiz{box-shadow:0px 4px 10px rgba(0,0,0,0.05);}
+.r-1i93rbr{right:0%;}
+.r-1iadl42{background-color:var(--sp-color-bg-standout-base);}
+.r-1ielgck{animation-duration:300ms;}
+.r-1ifxtd0{margin-bottom:16px;}
+.r-1iln25a{word-wrap:normal;}
+.r-1ioqa4e{border-top-right-radius:7px;}
+.r-1ipicw7{width:300px;}
+.r-1j7aebl{width:880px;}
+.r-1janqcz{width:16px;}
+.r-1jg9483{width:8px;}
+.r-1jj8364{margin-left:auto;}
+.r-1jkjb{margin-left:8px;}
+.r-1jnzvcq{padding-bottom:80px;}
+.r-1jocfgc{width:290px;}
+.r-1jpmnxg{word-wrap:anywhere;}
+.r-1jsra8{box-shadow:inset 0px 0px 0px 1px #e3e8ed;}
+.r-1jxfwug{border-top-width:2px;}
+.r-1k25im9{height:26px;}
+.r-1kb76zh{margin-right:8px;}
+.r-1kf75xu{color:rgba(12,105,61,1.00);}
+.r-1kfrs79{font-weight:600;}
+.r-1ki3p1m{border-right-color:var(--sp-color-border-layout);}
+.r-1kihuf0{align-self:center;}
+.r-1kjq87h{width:376px;}
+.r-1kkij8h{color:rgba(65,142,167,1.00);}
+.r-1knl56f{animation-name:r-1hunrpy;}
+.r-1kvn7zp{max-height:150px;}
+.r-1l0m7dr{background-image:radial-gradient(rgba(0, 0, 0, 0.1), #ffffff);}
+.r-1l7z4oj{padding-bottom:16px;}
+.r-1l94q7l{box-shadow:inset 0px 0px 1px rgb(0 0 0 / 30%);}
+.r-1ld3bg{top:-4px;}
+.r-1ldzwu0{animation-timing-function:linear;}
+.r-1ljd8xs{border-left-width:1px;}
+.r-1lky6n1{background-color:rgba(227,232,237,1.00);}
+.r-1lnfjr6{-webkit-background-clip:text;}
+.r-1lnt56z{color:rgba(211,220,228,1.00);}
+.r-1loqt21{cursor:pointer;}
+.r-1m04atk{padding-left:8px;}
+.r-1m4drjs{top:-6px;}
+.r-1maqer6{max-width:860px;}
+.r-1mdbw0j{padding-bottom:0px;}
+.r-1mdsxwj{color:rgba(237,159,81,1.00);}
+.r-1mgmw1x{background-image:linear-gradient(90deg, #5f45ff, #442fc8);}
+.r-1mhb1uw{width:42px;}
+.r-1mhtwjo{left:-3px;}
+.r-1mlwlqe{flex-basis:auto;}
+.r-1mnahxq{margin-top:0px;}
+.r-1moh23t{bottom:16px;}
+.r-1mrlafo{background-position:0;}
+.r-1ms9ukt{bottom:-5px;}
+.r-1mtwht8{color:rgba(210,168,255,1.00);}
+.r-1muvv40{animation-iteration-count:infinite;}
+.r-1n20pny{width:140px;}
+.r-1n6k3lk{color:rgba(36,42,49,1.00);}
+.r-1na1l7e{animation-play-state:running;}
+.r-1nf4jbm{color:rgba(59,69,78,1.00);}
+.r-1niwhzg{background-color:rgba(0,0,0,0.00);}
+.r-1nj16ve{left:-10px;}
+.r-1nlw0im{bottom:8px;}
+.r-1nnq5pb{background-color:var(--sp-color-bg-base);}
+.r-1ny4l3l{outline-style:none;}
+.r-1ocf4r9{scroll-snap-type:y mandatory;}
+.r-1odw9d6{background-color:rgba(20,23,28,1.00);}
+.r-1oec5bt{opacity:0.2;}
+.r-1oep0n4{left:-12px;}
+.r-1ois7e2{color:rgba(55,65,81,1.00);}
+.r-1or9b2r{height:10px;}
+.r-1osy6ei{color:rgba(255,220,215,1.00);}
+.r-1oszu61{align-items:stretch;}
+.r-1otgn73{touch-action:manipulation;}
+.r-1ow6zhx{margin-left:16px;}
+.r-1p0dtai{bottom:0px;}
+.r-1p5i0ed{bottom:-24px;}
+.r-1p69tiw{border-top-color:rgba(43,46,57,1.00);}
+.r-1pa6394{color:var(--sp-color-text-muted);}
+.r-1peese0{margin-bottom:24px;}
+.r-1ph75f1{height:80px;}
+.r-1pi2tsx{height:100%;}
+.r-1pl7oy7{min-height:48px;}
+.r-1ptriwd{right:2px;}
+.r-1pyaxff{padding-right:8px;}
+.r-1q142lx{flex-shrink:0;}
+.r-1q6rxnj{padding-right:110px;}
+.r-1q77oe7{background-color:rgba(171,183,202,1.00);}
+.r-1q9jyb7{-webkit-filter:blur(16px) contrast(110%) hue-rotate(10deg) brightness(1.2) saturate(1.2);filter:blur(16px) contrast(110%) hue-rotate(10deg) brightness(1.2) saturate(1.2);}
+.r-1qc3rpd{transform:scaleY(-1);}
+.r-1qd0xha{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.r-1qdbj55{animation-name:r-ndfo3d;}
+.r-1qefu2b{right:-3px;}
+.r-1qhn6m8{padding-left:16px;}
+.r-1qipmxq{color:var(--sp-color-button-upgrade-text);}
+.r-1quu1zo{;}
+.r-1r0uwd5{color:rgba(255,166,87,1.00);}
+.r-1r3mtb5{border-bottom-color:rgba(20,23,28,1.00);}
+.r-1r74h94{left:8px;}
+.r-1r8g8re{height:36px;}
+.r-1rasi3h{color:rgba(136,153,168,1.00);}
+.r-1rbj2e8{outline-color:#f5f7f9;}
+.r-1rdth4h{border-left-color:rgba(55,65,81,1.00);}
+.r-1rho1gz{box-shadow:0px 12px 13px rgba(0,0,0,0.12);}
+.r-1rkdych{max-width:1040px;}
+.r-1rla0r3{background-image:linear-gradient(90deg, #d33d3d, #b41a1a);}
+.r-1rnoaur{overflow-y:auto;}
+.r-1ro0kt6{flex-basis:0%;}
+.r-1ro7rbe{right:100%;}
+.r-1ro9v5z{color:rgba(52,113,133,1.00);}
+.r-1rttkqs{width:400px;}
+.r-1s3egr7{z-index:100;}
+.r-1s8p94s{max-width:832px;}
+.r-1sncvnh{transform:translateZ(0px);}
+.r-1sxrcry{background-size:auto;}
+.r-1t2qqvi{flex-basis:50%;}
+.r-1t7uo4s{object-fit:cover;}
+.r-1t8m4kl{text-shadow:0px 0px 3px rgba(36,42,49,1.00);}
+.r-1tazni7{cursor:not-allowed;}
+.r-1ts5s6y{aspect-ratio:1.7777777777777777;}
+.r-1ttybm1{border-top-color:rgba(45,50,58,1.00);}
+.r-1ty4vvm{left:40px;}
+.r-1tymxbh{box-shadow:5px 0px 7px rgba(36,42,49,0.60);}
+.r-1u8kdu{bottom:24px;}
+.r-1u9v6se{color:rgba(39,85,100,1.00);}
+.r-1ua3vzd{background-color:rgba(223,255,240,1.00);}
+.r-1ub1aon{transform:translateY(100%);}
+.r-1udbk01{text-overflow:ellipsis;}
+.r-1ufdtu9{background-image:linear-gradient(270deg, #e3e8ed 10%, #f5f7f9, #e3e8ed 90%);}
+.r-1ufr4wv{z-index:9;}
+.r-1ug9s38{box-shadow:inset 0px 0px 0px 1px #374151;}
+.r-1ui5ee8{font-size:32px;}
+.r-1ul06mb{margin-left:32px;}
+.r-1ulgld5{color:rgba(255,123,114,1.00);}
+.r-1um4q9x{-moz-transition:opacity 800ms ease;-webkit-transition:opacity 800ms ease;transition:opacity 800ms ease;}
+.r-1uql0sn{top:-1.2em;}
+.r-1ur9v65{padding-top:40px;}
+.r-1ut4w64{margin-bottom:-1px;}
+.r-1uwte3a{padding-bottom:40px;}
+.r-1uypc71{animation-timing-function:ease-in;}
+.r-1v2oles{top:50%;}
+.r-1v7sw2p{background-size:50% 80px;}
+.r-1vamr63{max-width:720px;}
+.r-1vckr1u{background-color:rgba(245,247,249,1.00);}
+.r-1vex5ub{color:rgba(68,47,200,1.00);}
+.r-1vutw0s{background-color:rgba(103,6,12,1.00);}
+.r-1vzi8xi{vertical-align:middle;}
+.r-1w2pmg{height:0px;}
+.r-1w6e6rj{flex-wrap:wrap;}
+.r-1wan564{color:rgba(169,192,240,1.00);}
+.r-1wbh5a2{flex-shrink:1;}
+.r-1wezhl{margin-left:80px;}
+.r-1wfhzrg{height:120px;}
+.r-1wghi3f{top:-8px;}
+.r-1wtj0ep{justify-content:space-between;}
+.r-1wv73ep{align-self:baseline;}
+.r-1ww30s9{max-width:30px;}
+.r-1wyyakw{z-index:-1;}
+.r-1wzrnnt{margin-top:16px;}
+.r-1x35g6{font-size:24px;}
+.r-1xbve24{height:6px;}
+.r-1xcajam{position:fixed;}
+.r-1xnzce8{-moz-user-select:text;-webkit-user-select:text;user-select:text;}
+.r-1xoqk23{background-color:rgba(68,47,200,1.00);}
+.r-1xsj5db{background-color:var(--sp-color-sidesheet-list-item-bg-hover);}
+.r-1y0r55a{background-image:radial-gradient(rgba(255, 255, 255, 0.1), #14171c);}
+.r-1y14msn{border-bottom-color:rgba(55,65,81,1.00);}
+.r-1y9xkqr{left:8%;}
+.r-1yb8zos{background-color:rgba(162,169,185,1.00);}
+.r-1ybp48z{background-image:linear-gradient(90deg, #cc3131, #b41a1a);}
+.r-1ye8kvj{max-width:600px;}
+.r-1ygmrgt{padding-top:24px;}
+.r-1yv4afn{border-top-color:rgba(227,232,237,1.00);}
+.r-1yvhtrz{width:32px;}
+.r-1yxedwg{top:8px;}
+.r-1yyzdbt{border-left-color:rgba(227,232,237,1.00);}
+.r-257lmc{width:1180px;}
+.r-29dh1f{background-image:linear-gradient(90deg, #eceff1, #e3e8ed);}
+.r-2atnlg{background-color:rgba(78,170,200,1.00);}
+.r-2awvau{min-width:-webkit-max-content;min-width:-moz-max-content;min-width:max-content;}
+.r-2eszeu::-webkit-scrollbar{display:none}
+.r-2eszeu{scrollbar-width:none;}
+.r-2fm7cc{color:rgba(139,148,158,1.00);}
+.r-2fw26j{outline-offset:0px;}
+.r-2jelyo{background-color:rgba(24,28,31,1.00);}
+.r-2jxp4q{background-color:rgba(34,39,46,1.00);}
+.r-2kxcpj{inset:0px;}
+.r-2llsf{min-height:100%;}
+.r-2o02ov{margin-top:40px;}
+.r-2tavb8{background-color:rgba(0,0,0,0.60);}
+.r-2yi16{min-height:36px;}
+.r-2zpn8w{-webkit-break-inside:avoid;break-inside:avoid;}
+.r-30o5oe{-moz-appearance:none;-ms-appearance:none;-webkit-appearance:none;appearance:none;}
+.r-30qeir{bottom:-4px;}
+.r-36ujnk{font-style:italic;}
+.r-37p410{color:var(--sp-color-text-base);}
+.r-37tt59{line-height:32px;}
+.r-3da1kt{height:8px;}
+.r-3dgjpp{border-top-color:rgba(36,42,49,1.00);}
+.r-3hw5f6{color:rgba(149,56,0,1.00);}
+.r-3mc0re{right:8px;}
+.r-3mtglp{row-gap:16px;}
+.r-3o833n{background-color:rgba(251,232,240,1.00);}
+.r-3pxcvb{border-bottom-color:rgba(255,255,255,1.00);}
+.r-3s2u2q{white-space:nowrap;}
+.r-417010{z-index:0;}
+.r-41syhy{max-width:504px;}
+.r-432wen{width:3px;}
+.r-44c749{border-bottom-left-radius:7px;}
+.r-47i0zk{background-image:radial-gradient(rgba(0, 0, 0, 0.1), #14171c);}
+.r-493a2x{width:680px;}
+.r-4c3hy2{max-width:245px;}
+.r-4d76ec{height:200px;}
+.r-4dj0k7{box-shadow:0px 1px 2px rgba(0,0,0,0.12);}
+.r-4gszlv{background-size:cover;}
+.r-4jz4xt{background-image:linear-gradient(90deg, #374151, #374151);}
+.r-4v7adb{height:5px;}
+.r-5cpxsl{stroke-width:3;}
+.r-5is6sd{max-width:460px;}
+.r-5kkj8d{border-top-width:1px;}
+.r-5ks0hp{right:3.5px;}
+.r-5kx3fr{page-break-inside:avoid;}
+.r-5oul0u{margin-bottom:8px;}
+.r-5soawk{width:10px;}
+.r-5vf7qs{width:188px;}
+.r-5xr8s6{outline-width:2px;}
+.r-60emj1{background-color:rgba(255,204,203,1.00);}
+.r-61z16t{margin-right:0px;}
+.r-633pao{pointer-events:none!important;}
+.r-6b6lzv{color:rgba(100,143,228,1.00);}
+.r-6dt33c{opacity:1;}
+.r-6k4xqk{margin-top:-40px;}
+.r-6t5ypu{border-bottom-left-radius:4px;}
+.r-6taxm2:-ms-input-placeholder{color:var(--placeholderTextColor);opacity:1;}
+.r-6taxm2::-moz-placeholder{color:var(--placeholderTextColor);opacity:1;}
+.r-6taxm2::-webkit-input-placeholder{color:var(--placeholderTextColor);opacity:1;}
+.r-6taxm2::placeholder{color:var(--placeholderTextColor);opacity:1;}
+.r-6uxfom{margin-left:24px;}
+.r-6wscbn{max-width:252px;}
+.r-73dpzl{border-top-color:rgba(245,247,249,1.00);}
+.r-7b7h2f{left:100%;}
+.r-7bxf49{background-color:rgba(205,218,246,1.00);}
+.r-7cikom{font-size:inherit;}
+.r-7l9xyp{background-color:rgba(255,255,255,0.20);}
+.r-7q8q6z{cursor:default;}
+.r-7xmw5f{width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}
+.r-81rbui{animation-name:r-1ak6360;}
+.r-855088{border-left-color:rgba(0,0,0,0.00);}
+.r-88pszg{margin-right:16px;}
+.r-8akbws{-webkit-box-orient:vertical;}
+.r-8d26hk{margin-bottom:40px;}
+.r-8hc5te{width:6px;}
+.r-8jwyv6{-moz-transition:opacity 0.2s ease-in-out;-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out;}
+.r-8upyzv{width:260px;}
+.r-8v5hsd{color:rgba(126,231,135,1.00);}
+.r-9030i9{box-shadow:0px 4px 10px rgba(0,0,0,0.99);}
+.r-9111t9{padding-right:410px;}
+.r-92ng3h{width:1px;}
+.r-934yyj{padding-left:34px;}
+.r-95jzfe{padding-top:16px;}
+.r-97e31f{padding-bottom:env(safe-area-inset-bottom);}
+.r-97prym{flex-basis:16px;}
+.r-99m41f{color:rgba(110,119,129,1.00);}
+.r-9aemit{padding-right:0px;}
+.r-9ji8r7{transform:translateY(0%);}
+.r-9jpwak{min-width:auto;}
+.r-a2tzq0{justify-content:space-around;}
+.r-a5pmau{margin-right:2px;}
+.r-a9hzal{height:660px;}
+.r-adacv{min-height:64px;}
+.r-adyw6z{font-size:20px;}
+.r-agyig6{background-color:var(--sp-color-button-upgrade-bg-hover);}
+.r-ah5dr5>*{pointer-events:none;}
+.r-ah5dr5{pointer-events:auto!important;}
+.r-ak0haq{color:rgba(121,192,255,1.00);}
+.r-aqxs90{-moz-transition:opacity 500ms ease-in, z-index 1000ms ease-in;-webkit-transition:opacity 500ms ease-in, z-index 1000ms ease-in;transition:opacity 500ms ease-in, z-index 1000ms ease-in;}
+.r-b4cb4{max-height:440px;}
+.r-b88u0q{font-weight:700;}
+.r-bcqeeo{min-width:0px;}
+.r-bgnin{min-width:150px;}
+.r-bnwqim{position:relative;}
+.r-bsjocg{@media print:[object Object];}
+.r-bta5j5{right:40px;}
+.r-buy8e9{overflow-y:hidden;}
+.r-bv2aro{padding-left:env(safe-area-inset-left);}
+.r-bxaprw{border-top-left-radius:7px;}
+.r-c68hjy{color:rgba(161,161,161,1.00);}
+.r-cb7i37{outline-color:#395794;}
+.r-cdhzog{padding-right:80px;}
+.r-cpa5s6{scroll-snap-align:start;}
+.r-cqilzk{height:400px;}
+.r-d822y2{color:rgba(5,80,174,1.00);}
+.r-deolkf{box-sizing:border-box;}
+.r-dflpy8{height:1.2em;}
+.r-dkge59{background-color:rgba(170,184,194,1.00);}
+.r-dnmrzs{max-width:100%;}
+.r-dse9kg{outline-style:auto;}
+.r-dvzd6p{right:-1px;}
+.r-dvzwsg{border-left-color:rgba(211,220,228,1.00);}
+.r-dwliz8{border-left-width:2px;}
+.r-e1k2in{right:16px;}
+.r-e9uq0i{animation-duration:1200ms;}
+.r-ea455c{border:none;}
+.r-eafdt9{transition-duration:0.15s;}
+.r-ecifi{max-width:970px;}
+.r-ehq7j7{background-size:contain;}
+.r-epq5cr{height:2px;}
+.r-eqo98v{top:24px;}
+.r-eqz5dr{flex-direction:column;}
+.r-eu3ka{height:40px;}
+.r-f4gmv6{gap:16px;}
+.r-fa5tdg{max-width:456px;}
+.r-fdjqy7{text-align:left;}
+.r-flmpir{border-bottom-color:rgba(40,49,67,1.00);}
+.r-fnigne{border-right-width:0px;}
+.r-fpub7{color:rgba(0,0,0,0.00);}
+.r-g3mlsw{animation-name:r-t2lo5v;}
+.r-gg6oyi{font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+.r-ggadg3{left:-2px;}
+.r-givd4m{left:-5px;}
+.r-gl891g{min-width:420px;}
+.r-gtdqiz{position:-webkit-sticky;position:sticky;}
+.r-gu0qjt{padding-left:32px;}
+.r-gxnn5r{border-left-width:0px;}
+.r-gxopl6{left:316px;}
+.r-gy4na3{padding-left:0px;}
+.r-gys0vz{color:rgba(0,136,71,1.00);}
+.r-h2mvr{min-width:8px;}
+.r-h2q2x{transform:scaleX(-1);}
+.r-h3s6tt{height:48px;}
+.r-h7ga17{background-color:rgba(43,46,57,1.00);}
+.r-h7gdob{color:currentColor;}
+.r-ha54is{icon-color:#a2a9b9;}
+.r-hauab{-moz-transition:width 50ms ease-in-out;-webkit-transition:width 50ms ease-in-out;transition:width 50ms ease-in-out;}
+.r-hbpseb{line-height:22px;}
+.r-hd655f{color:rgba(162,169,185,1.00);}
+.r-homxoj{color:inherit;}
+.r-hq6u89{left:92%;}
+.r-hqnlqz{border-left-color:rgba(52,109,219,1.00);}
+.r-htfu76{margin-left:-8px;}
+.r-hvns9x{max-width:400px;}
+.r-hxflta{padding-right:env(safe-area-inset-right);}
+.r-i023vh{padding-right:16px;}
+.r-i7h7g2{-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);}
+.r-i8xx8x{color:rgba(207,34,46,1.00);}
+.r-ia06lx{background-color:rgba(115,92,255,1.00);}
+.r-ibjss6{background-color:rgba(136,153,168,1.00);}
+.r-icoktb{opacity:0.5;}
+.r-ifefl9{min-height:0px;}
+.r-ihd41t{border:1px solid #374151;}
+.r-iphfwy{padding-bottom:4px;}
+.r-ipm5af{top:0px;}
+.r-iqs06e{background-image:radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));}
+.r-ir6n1k{border-top-right-radius:6px;}
+.r-ixzivm{@media print:[object Object];}
+.r-iyfy8q{width:auto;}
+.r-j300sb{animation-name:r-1rx4pb;}
+.r-jfrpv2{color:rgba(130,80,223,1.00);}
+.r-jn0m22{top:54px;}
+.r-jn5ml{right:-5px;}
+.r-jvuzdy{top:-5px;}
+.r-jwli3a{color:rgba(255,255,255,1.00);}
+.r-jxjwwx{left:24px;}
+.r-k200y{align-self:flex-start;}
+.r-k923pl{background-color:rgba(218,212,255,1.00);}
+.r-kcufgn{cursor:ew-resize;}
+.r-key0ze{height:240px;}
+.r-kicko2{border-top-left-radius:4px;}
+.r-kls4rr{padding-right:40px;}
+.r-knv0ih{margin-top:8px;}
+.r-kquydp{right:-4px;}
+.r-ky29hr{bottom:2px;}
+.r-l0gwng{width:200px;}
+.r-l13dpy{z-index:200;}
+.r-l27s25{background-color:rgba(204,207,212,1.00);}
+.r-l9hqf4{box-shadow:0px 1px 1px rgba(0,0,0,0.69);}
+.r-labphf{height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;}
+.r-lchren{margin-right:auto;}
+.r-ld67tl{left:-72px;}
+.r-lk1fr1{icon-color:#8899a8;}
+.r-lltvgl{overflow-x:auto;}
+.r-lqms97{margin-left:-1px;}
+.r-lrsllp{width:24px;}
+.r-lrvibr{-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+.r-lv5dtd{padding-left:110px;}
+.r-lx1l9k{background-image:radial-gradient(rgba(255, 255, 255, 0.1), #ffffff);}
+.r-m0vln2{border-left-color:rgba(43,46,57,1.00);}
+.r-m2pi6t{padding-left:4px;}
+.r-m5arl1{width:2px;}
+.r-m5n4jz{background-color:rgba(220,238,244,1.00);}
+.r-mabqd8{height:32px;}
+.r-majxgm{font-weight:500;}
+.r-mbgqwd{margin-right:24px;}
+.r-mfh4gg{scroll-snap-type:x mandatory;}
+.r-mhe3cw{z-index:10;}
+.r-ms8t9i{border-left-width:3px;}
+.r-na6qhi{;}
+.r-ng8e2f{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab;}
+.r-njhh6i{color:rgba(78,170,200,1.00);}
+.r-nkouq2{box-shadow:-5px 0px 7px rgba(36,42,49,0.60);}
+.r-notknq{border-top-right-radius:4px;}
+.r-nvplwv{animation-timing-function:ease-out;}
+.r-nvvorq{top:3.5px;}
+.r-nwxazl{line-height:40px;}
+.r-nzcix3{border-bottom-color:rgba(227,232,237,1.00);}
+.r-o8yidv{border-top-left-radius:6px;}
+.r-o9xkwf{top:2px;}
+.r-obd0qt{align-items:flex-end;}
+.r-onxxid{background-color:rgba(27,30,33,0.77);}
+.r-op3p1c{width:520px;}
+.r-orgf3d{opacity:0;}
+.r-ou6ah9{border-top-left-radius:0px;}
+.r-oucylx{border-bottom-color:rgba(0,0,0,0.00);}
+.r-oz83uh{box-shadow:0px 1px 1px rgba(0,0,0,0.12);}
+.r-p1pxzi{margin-bottom:0px;}
+.r-pex7a0{color:rgba(130,7,30,1.00);}
+.r-pi8zqv{box-shadow:0px 0px 7px rgba(0,0,0,0.04);}
+.r-pm9dpa{max-height:100%;}
+.r-puj83k{padding-left:24px;}
+.r-py1axk{border-bottom-right-radius:7px;}
+.r-q4m81j{text-align:center;}
+.r-qklmqi{border-bottom-width:1px;}
+.r-qn3fzs{padding-bottom:24px;}
+.r-r1s0sa{background-color:rgba(255,235,233,1.00);}
+.r-r9hte5{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+.r-redadu{margin-left:var(--sp-spacing-200);}
+.r-rs94m5{background-image:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K");}
+.r-rwqe4o{width:48px;}
+.r-s09aw7{background-image:linear-gradient(to left, #735cff, rgb(109 28 169), rgb(96 104 191), #008847, #FFD139, #b95e04, #d33d3d);}
+.r-s0e3za{padding-left:80px;}
+.r-s8bhmr{min-width:56px;}
+.r-sa2ff0{min-height:100vh;}
+.r-sfbmgh{z-index:9999;}
+.r-sga3zk{height:64px;}
+.r-sgscqh{width:250px;}
+.r-t12b5v{border-top-right-radius:0px;}
+.r-t1hnsm{-moz-transition:150ms transform;-webkit-transition:150ms transform;transition:150ms transform;}
+.r-t9hbny{background-color:rgba(211,61,61,1.00);}
+.r-tceitz{left:16px;}
+.r-td7lzs{background-color:var(--sp-color-bg-standout-side);}
+.r-tni569{background-color:rgba(11,79,47,1.00);}
+.r-tskmnb{padding-top:8px;}
+.r-tsynxw{text-transform:uppercase;}
+.r-u529wo{transform:translateY(-2px);}
+.r-u6sd8q{background-repeat:no-repeat;}
+.r-u8s1d{position:absolute;}
+.r-u92y06{background-color:rgba(255,165,0,1.00);}
+.r-u9bbvc{;}
+.r-u9z937{bottom:80px;}
+.r-ubezar{font-size:16px;}
+.r-ud0q2t{letter-spacing:1px;}
+.r-udcg8d{color:rgba(20,23,28,1.00);}
+.r-ufs8t{background-clip:text;}
+.r-uibjmv{font-family:gitbook-code-font, Menlo, monospace;}
+.r-upfvwg{box-shadow:0px 0px 1px rgb(255 255 255 / 30%);}
+.r-uweo6c{bottom:136px;}
+.r-ux9zog{background-color:rgba(51,61,85,1.00);}
+.r-v2u3o6{right:4px;}
+.r-vq47rg{color:rgba(211,61,61,1.00);}
+.r-vvn4in{background-position:center;}
+.r-w0va4e{margin-right:40px;}
+.r-w9n8ly{transition-delay:200ms;}
+.r-wc24c3{z-index:20;}
+.r-wech8c{max-width:1280px;}
+.r-wgabs5{border-bottom-width:2px;}
+.r-wk8lta{padding-top:0px;}
+.r-ws9h79{left:4px;}
+.r-wwqw7s{left:-1px;}
+.r-wy61xf{height:72px;}
+.r-x1dlf0{max-width:200px;}
+.r-x3cy2q{background-size:100% 100%;}
+.r-xb2eav{font-size:40px;}
+.r-xd6kpl{padding-bottom:8px;}
+.r-xifl00{left:-4px;}
+.r-xky0vn{background-color:rgba(104,60,17,1.00);}
+.r-xnn892{background-color:rgba(218,251,225,1.00);}
+.r-xx3c9p{animation-name:r-imtty0;}
+.r-xzortm{margin-right:-16px;}
+.r-y3rmyz{width:120px;}
+.r-ye2ihm{background-image:none;}
+.r-yh6aho{background-image:linear-gradient(270deg, #2b2e39 10%, #22272e, #2b2e39 90%);}
+.r-ymefdi{padding-top:var(--sp-spacing-300);}
+.r-yrgyi6{white-space:pre;}
+.r-ywxogp{color:rgba(115,92,255,1.00);}
+.r-z2g584{width:76px;}
+.r-z3s97b{border-right-color:rgba(43,46,57,1.00);}
+.r-z80fyv{height:20px;}
+.r-z9jf92{color:rgba(234,242,247,1.00);}
+.r-zchlnj{right:0px;}
+.r-zh076v{height:100vh;}
+.r-zits6j{right:8%;}
+.r-zo7nv5{-webkit-column-gap:16px;column-gap:16px;}
+.r-ztyd71{background-color:rgba(0,0,0,0.20);}
+@-webkit-keyframes r-1ak6360{0%{background-position-x:0%;}100%{background-position-x:100%;}}
+@-webkit-keyframes r-1hunrpy{0%{transform:translateY(100%);}100%{transform:translateY(0%);}}
+@-webkit-keyframes r-1rx4pb{0%{transform:translateX(-100%);}100%{transform:translateX(400%);}}
+@-webkit-keyframes r-9p3sdl{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@-webkit-keyframes r-imtty0{0%{opacity:0;}100%{opacity:1;}}
+@-webkit-keyframes r-ndfo3d{0%{transform:translateY(0%);}100%{transform:translateY(100%);}}
+@-webkit-keyframes r-t2lo5v{0%{opacity:1;}100%{opacity:0;}}
+@keyframes r-1ak6360{0%{background-position-x:0%;}100%{background-position-x:100%;}}
+@keyframes r-1hunrpy{0%{transform:translateY(100%);}100%{transform:translateY(0%);}}
+@keyframes r-1rx4pb{0%{transform:translateX(-100%);}100%{transform:translateX(400%);}}
+@keyframes r-9p3sdl{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes r-imtty0{0%{opacity:0;}100%{opacity:1;}}
+@keyframes r-ndfo3d{0%{transform:translateY(0%);}100%{transform:translateY(100%);}}
+@keyframes r-t2lo5v{0%{opacity:1;}100%{opacity:0;}}
+[stylesheet-group="10"]{}
+[data-rnwrdesktop-166pt5r]{width:max(220px, calc(100vw - max(300px, calc((100vw - 970px) / 2 - 0px)) - 750px - 110px - 300px - 0px));}
+[data-rnwrdesktop-18u37iz]{flex-direction:row;}
+[data-rnwrdesktop-1hy97zq-1q6rxnj-lv5dtd-9111t9]{padding-left:110px;padding-right:410px;padding-top:80px;}
+[data-rnwrdesktop-1jkjb]{margin-left:8px;}
+[data-rnwrdesktop-1kb76zh]{margin-right:8px;}
+[data-rnwrdesktop-1ph75f1]{height:80px;}
+[data-rnwrdesktop-1uwte3a]{padding-bottom:40px;}
+[data-rnwrdesktop-fnigne]{border-right-width:0px;}
+[data-rnwrdesktop-gg6oyi-adyw6z-135wba7-b88u0q]{font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;line-height:24px;}
+[data-rnwrdesktop-gg6oyi-ubezar-135wba7-1kfrs79]{font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:24px;}
+[data-rnwrdesktop-gg6oyi-xb2eav-1dn12g7-b88u0q]{font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:40px;font-weight:700;line-height:48px;}
+[data-rnwrdesktop-h3s6tt]{height:48px;}
+[data-rnwrdesktop-hidden]{display: none;}
+[data-rnwrdesktop-iyfy8q-1qhn6m8-11g3r6m-1h0z5md]{justify-content:flex-start;padding-left:16px;padding-right:24px;width:auto;}
+[data-rnwrdesktop-u8s1d-1qhn6m8-i023vh]{padding-left:16px;padding-right:16px;position:absolute;}
+[data-rnwrdesktop-visible]{display: flex;}
+[stylesheet-group="11"]{}
+@media (max-width: 1024px) and (max-width: 9999999.494850524510111312253100114px) { [data-rnwr1024-eqz5dr] {flex-direction:column;} }
+@media (max-width: 1024px) and (max-width: 9999999.49485052454910510212011610048px) { [data-rnwr1024-1ifxtd0] {margin-bottom:16px;} }
+@media (max-width: 1280px) and (max-width: 9999999.4950564845104105100100101110px) { [data-rnwr1280-hidden] {display: none;} }
+@media (max-width: 1280px) and (max-width: 9999999.49505648454955555510299105px) { [data-rnwr1280-1777fci] {justify-content:center;} }
+@media (max-width: 1430px) and (max-width: 9999999.495251484511810511510598108101px) { [data-rnwr1430-visible] {display: flex;} }
+@media (max-width: 1490px) and (max-width: 9999999.49525748454955555510299105px) { [data-rnwr1490-1777fci] {justify-content:center;} }
+[stylesheet-group="12"]{}
+@media (max-width: 700px) and (max-width: 9999999.5548484510111312253100114px) { [data-rnwr700-eqz5dr] {flex-direction:column;} }
+@media (max-width: 700px) and (max-width: 9999999.55484845103103541111211054511798101122971144549515311998975545491071021141155557px) { [data-rnwr700-gg6oyi-ubezar-135wba7-1kfrs79] {font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:24px;} }
+@media (max-width: 700px) and (max-width: 9999999.55484845103103541111211054549117105531011015645110119120971221084598565611748113px) { [data-rnwr700-gg6oyi-1ui5ee8-nwxazl-b88u0q] {font-family:gitbook-content-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:32px;font-weight:700;line-height:40px;} }
+@media (max-width: 700px) and (max-width: 9999999.55484845104105100100101110px) { [data-rnwr700-hidden] {display: none;} }
+@media (max-width: 700px) and (max-width: 9999999.5548484510512110212156113451011175110797px) { [data-rnwr700-iyfy8q-eu3ka] {height:40px;width:auto;} }
+@media (max-width: 700px) and (max-width: 9999999.554848451051211021215611345103121521109751451054850511181044549119981045397504549104481225310910045px) { [data-rnwr700-iyfy8q-gy4na3-i023vh-1wbh5a2-1h0z5md-] {flex-shrink:1;justify-content:flex-start;padding-left:0px;padding-right:16px;width:auto;} }
+@media (max-width: 700px) and (max-width: 9999999.554848451151039751122107px) { [data-rnwr700-sga3zk] {height:64px;} }
+@media (max-width: 700px) and (max-width: 9999999.5548484511810511510598108101px) { [data-rnwr700-visible] {display: flex;} }
+@media (max-width: 700px) and (max-width: 9999999.5548484549511085011652103px) { [data-rnwr700-13l2t4g] {border-right-width:1px;} }
+@media (max-width: 700px) and (max-width: 9999999.5548484557531061221021014549113104110541095645105485051118104px) { [data-rnwr700-95jzfe-1qhn6m8-i023vh] {padding-left:16px;padding-right:16px;padding-top:16px;} }
+@media (max-width: 700px) and (max-width: 9999999.55484845981101191131051094510312152110975145105485051118104px) { [data-rnwr700-bnwqim-gy4na3-i023vh] {padding-left:0px;padding-right:16px;position:relative;} }
+@media (max-width: 970px) and (max-width: 9999999.5755484510111312253100114px) { [data-rnwr970-eqz5dr] {flex-direction:column;} }
+@media (max-width: 970px) and (max-width: 9999999.5755484549491191141051201194510711011848105104px) { [data-rnwr970-11wrixw-knv0ih] {margin-left:0px;margin-top:8px;} }
+@media (max-width: 970px) and (max-width: 9999999.5755484554491224954116455311111710848117px) { [data-rnwr970-61z16t-5oul0u] {margin-bottom:8px;margin-right:0px;} }
+[stylesheet-group="13"]{}
+@media (max-width: 700px) and (max-width: 9999999.554848454955555510299105px) { [data-rnwr700-1777fci] {justify-content:center;} }
+[stylesheet-group="20"]{}
+[data-rnwi-1rasi3h-]{color:rgba(136,153,168,1.00);}
+[data-rnwi-handle="link"] [data-rnwilink--1ghhsy9-]{color:rgba(52,109,219,1.00);}
+[data-rnwi-handle="nearest"] [data-rnwinearest-1nf4jbm-]{color:rgba(59,69,78,1.00);}
+body:not(.dragging) [data-rnwi--1ghhsy9-hover-focus]:hover, body:not(.dragging) [data-rnwi--1ghhsy9-hover-focus]:focus{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi--1kkij8h-hover-focus]:hover, body:not(.dragging) [data-rnwi--1kkij8h-hover-focus]:focus{color:rgba(65,142,167,1.00);}
+body:not(.dragging) [data-rnwi--1tgwseu--focus]:focus{border-bottom-color:rgba(52,109,219,1.00);border-left-color:rgba(52,109,219,1.00);border-right-color:rgba(52,109,219,1.00);border-top-color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-190qawg-hover-focus]:hover, body:not(.dragging) [data-rnwi-190qawg-hover-focus]:focus{border-bottom-color:rgba(227,232,237,1.00);border-left-color:rgba(227,232,237,1.00);border-right-color:rgba(227,232,237,1.00);border-top-color:rgba(227,232,237,1.00);}
+body:not(.dragging) [data-rnwi-1b00too-hover]:hover{background-color:rgba(236,239,241,1.00);}
+body:not(.dragging) [data-rnwi-1iadl42-hover-focus]:hover, body:not(.dragging) [data-rnwi-1iadl42-hover-focus]:focus{background-color:var(--sp-color-bg-standout-base);}
+body:not(.dragging) [data-rnwi-5xr8s6-dse9kg-2fw26j-13yb0iz-focus-visible]:focus-visible{outline-color:#347185;outline-offset:0px;outline-style:auto;outline-width:2px;}
+body:not(.dragging) [data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible]:focus-visible{outline-color:#395794;outline-offset:0px;outline-style:auto;outline-width:2px;}
+body:not(.dragging) [data-rnwi-handle="BaseCard"]:hover [data-rnwibasecard--1ghhsy9-hover-focus], body:not(.dragging) [data-rnwi-handle="BaseCard"]:focus [data-rnwibasecard--1ghhsy9-hover-focus]{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-handle="BaseCard"]:hover [data-rnwibasecard--1ghhsy9-hover]{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-handle="button"]:hover [data-rnwibutton--1ghhsy9-hover-focus], body:not(.dragging) [data-rnwi-handle="button"]:focus [data-rnwibutton--1ghhsy9-hover-focus]{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-handle="button"]:hover [data-rnwibutton-37p410-hover-focus], body:not(.dragging) [data-rnwi-handle="button"]:focus [data-rnwibutton-37p410-hover-focus]{color:var(--sp-color-text-base);}
+body:not(.dragging) [data-rnwi-handle="link"]:hover [data-rnwilink--1e1gmzv-1ddef8g-hover]{-webkit-text-decoration-line:underline;color:rgba(38,59,102,1.00);text-decoration-line:underline;}
+body:not(.dragging) [data-rnwi-handle="nearest"]:hover [data-rnwinearest--1ghhsy9-hover-focus], body:not(.dragging) [data-rnwi-handle="nearest"]:focus [data-rnwinearest--1ghhsy9-hover-focus]{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-handle="nearest"]:hover [data-rnwinearest--1ghhsy9-hover]{color:rgba(52,109,219,1.00);}
+body:not(.dragging) [data-rnwi-handle="nearest"]:hover [data-rnwinearest--1kkij8h-hover-focus], body:not(.dragging) [data-rnwi-handle="nearest"]:focus [data-rnwinearest--1kkij8h-hover-focus]{color:rgba(65,142,167,1.00);}
+body:not(.dragging) [data-rnwi-handle="nearest"]:hover [data-rnwinearest-1nf4jbm-hover-focus], body:not(.dragging) [data-rnwi-handle="nearest"]:focus [data-rnwinearest-1nf4jbm-hover-focus]{color:rgba(59,69,78,1.00);}
+body:not(.dragging) [data-rnwi-u529wo-aq1qub-c1zw6o-1khlhp8-1cut0bx-na6qhi--hover]:hover{box-shadow:0px 12px 13px rgba(0,0,0,0.02);transform:translateY(-2px);}</style>
+                <style>
+                    html,
+                    body {
+                        -webkit-font-smoothing: antialiased;
+                        text-rendering: optimizelegibility;
+                        width: 100%;
+                        min-height: 100vh;
+                        user-select: none;
+                        outline: none;
+                        position: relative;
+                    }
+                    /* Avoid Chrome to see Safari hack */
+                    @supports (-webkit-touch-callout: none) {
+                        html,
+                        body,
+                        .gitbook-root {
+                            /* The hack for Safari */
+                            min-height: -webkit-fill-available;
+                        }
+                    }
+                    .gitbook-root {
+                        display: flex;
+                        min-height: 100vh;
+                    }
+                </style>
+            
+        <script type="text/javascript" defer src="https://cdn.iframe.ly/embed.js" async></script>
+        <script
+            type="text/javascript"
+            defer
+            src="https://cdn.polyfill.io/v2/polyfill.js?features=Intl.~locale.en"
+            crossorigin="anonymous"
+        ></script>
+
+    </head>
+    <body class="theme-color-light theme-radius-rounded">
+        <script>
+                    (function () {
+                        var theme = null;
+
+                        try {
+                          var rawValue = localStorage.getItem("@gitbook/themeMode");
+                          if (rawValue !== null) {
+                            theme = JSON.parse(rawValue);
+                          }
+                        } catch (err) {
+                          // Make an attempt in case it's not a JSON value
+                          if (theme !== "light" && theme !== "dark") {
+                            theme = null;
+                          }
+                        }
+                        if (undefined && theme && theme !== "undefined") {
+                          document.body.classList.add("theme-overlay");
+                          document.body.classList.remove("theme-color-undefined");
+                          document.body.classList.add("theme-color-" + theme);
+                        }
+                      })();
+                </script>
+                   <div class="gitbook-root"><div class="css-175oi2r r-13awgt0 r-12vffkv"><div class="css-175oi2r r-13awgt0 r-12vffkv"><!--$--><header data-rnwrdesktop-1ph75f1="true" data-rnwr700-sga3zk="true" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-nzcix3 r-qklmqi r-gtdqiz r-ipm5af r-184en5c r-18u37iz r-1awozwy" style="background-color:rgba(255,255,255,1.00)"><div class="view_manYY publicContainer_11UZS smallHorizontal_kBCzR alignCenter_zl3iW withStickyHeader_HQiM-"><div aria-label="Show Table of Content" role="button" data-rnwrdesktop-hidden="true" data-rnwr700-visible="true" data-rnwi-1iadl42-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="button" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-18kxxzh r-1cmwbt1 r-1777fci r-1ny4l3l r-1r8g8re r-1pa6394 r-1kb76zh r-18c69zk r-mk0yit r-1acpoxo" style="transition-duration:0.15s"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" data-rnwibutton-37p410-hover-focus="true" data-rnwi-handle="nearest" class="r-h7gdob" style="vertical-align:middle;width:18px;height:18px"><path d="M3 12h18M3 6h18M3 18h18"></path></svg></div><a href="../index.html" aria-label="Tind Meet - Знакомства" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" data-rnwrdesktop-iyfy8q-1qhn6m8-11g3r6m-1h0z5md="true" data-rnwr700-iyfy8q-gy4na3-i023vh-1wbh5a2-1h0z5md-="true" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-18u37iz r-1awozwy" style="transition-duration:0.15s" data-testid="public.headerHomeLink"><div class="css-175oi2r r-6wscbn r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1h0z5md r-1awozwy"><div class="css-175oi2r"><div data-rnwrdesktop-visible="true" data-rnwr700-hidden="true" class="css-175oi2r"><div class="css-175oi2r r-18u37iz r-1awozwy r-1777fci r-z2wwpe r-14lw9ot r-1l94q7l r-88pszg" style="width:36px;height:36px;overflow-x:hidden;overflow-y:hidden"><div class="css-175oi2r r-4qtqp9 r-1q9jyb7 r-1oec5bt r-u8s1d" style="width:72.32px;height:72.32px"><span class="emj-symbols _1f49e" role="img" title="revolving hearts" aria-label="revolving hearts" style="transform:translate(-50%, -50%) scale(1.13)">💞</span></div><div class="css-175oi2r r-4qtqp9 r-bnwqim" style="width:24.96px;height:24.96px"><span class="emj-symbols _1f49e" role="img" title="revolving hearts" aria-label="revolving hearts" style="transform:translate(-50%, -50%) scale(0.39)">💞</span></div></div></div><div data-rnwrdesktop-hidden="true" data-rnwr700-visible="true" class="css-175oi2r"><div class="css-175oi2r r-18u37iz r-1awozwy r-1777fci r-z2wwpe r-14lw9ot r-1l94q7l r-88pszg" style="width:24px;height:24px;overflow-x:hidden;overflow-y:hidden"><div class="css-175oi2r r-4qtqp9 r-1q9jyb7 r-1oec5bt r-u8s1d" style="width:48px;height:48px"><span class="emj-symbols _1f49e" role="img" title="revolving hearts" aria-label="revolving hearts" style="transform:translate(-50%, -50%) scale(0.75)">💞</span></div><div class="css-175oi2r r-4qtqp9 r-bnwqim" style="width:16.64px;height:16.64px"><span class="emj-symbols _1f49e" role="img" title="revolving hearts" aria-label="revolving hearts" style="transform:translate(-50%, -50%) scale(0.26)">💞</span></div></div></div></div><div dir="auto" data-rnwrdesktop-gg6oyi-ubezar-135wba7-1kfrs79="true" data-rnwr700-gg6oyi-ubezar-135wba7-1kfrs79="true" class="css-1rynq56 r-1udh08x"><span data-rnwinearest-1nf4jbm-="true" data-rnwinearest--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" class="css-1qaijid r-8akbws r-krxsd3 r-dnmrzs r-1udh08x r-1udbk01" style="-webkit-line-clamp:2;color:rgba(59,69,78,1.00)">Tind Meet - Знакомства</span></div></div></a><div data-rnwr700-hidden="true" class="css-175oi2r r-18u37iz r-17s6mgv r-1awozwy r-1ro0kt6 r-16y2uox r-1wbh5a2 r-1qhn6m8"></div><div data-rnwrdesktop-visible="true" data-rnwr700-hidden="true" class="css-175oi2r r-1jj8364 r-puj83k r-1pyaxff r-11xdecz r-1ro0kt6 r-16y2uox r-1wbh5a2"><div aria-label="Search" data-rnwi-190qawg-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-42olwf r-kdyh1x r-rs99b7 r-1r8g8re r-13qz1uu r-18u37iz r-1wtj0ep r-1awozwy r-1qhn6m8 r-1pyaxff" style="background-color:rgba(59,69,78,0.10);transition-duration:0.15s"><div class="css-175oi2r r-18u37iz r-1awozwy"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="r-1kb76zh" style="vertical-align:middle;width:16px;height:16px;color:rgba(59,69,78,1.00)"><path fill="currentColor" fill-rule="evenodd" d="M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 17 0 8.5 8.5 0 0 1-17 0Z" clip-rule="evenodd"></path><path fill="currentColor" fill-rule="evenodd" d="M15.093 15.093a1 1 0 0 1 1.414 0l5.2 5.2a1 1 0 0 1-1.414 1.414l-5.2-5.2a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path></svg><div dir="auto" data-rnwinearest-1nf4jbm-hover-focus="true" data-rnwi-handle="nearest" class="css-1rynq56 r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb" style="color:rgba(59,69,78,1.00)">Search</div></div><div class="css-175oi2r"><div class="view_manYY gap_PR1GX"><span class="base_qcuoW shortcut_8i--D xsmall_yHtds">⌃</span><span class="base_qcuoW shortcut_8i--D xsmall_yHtds">K</span></div></div></div></div><div data-rnwrdesktop-hidden="true" data-rnwr700-visible="true" class="css-175oi2r r-1jj8364 r-puj83k r-1pyaxff"><div aria-label="Search" role="button" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="button" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-18kxxzh r-1cmwbt1 r-1777fci r-1ny4l3l r-z2wwpe r-mabqd8 r-1bnj018 r-mk0yit r-1yvhtrz" style="transition-duration:0.15s"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" data-rnwibutton--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" style="vertical-align:middle;width:16px;height:16px;color:rgba(59,69,78,1.00)"><path fill="currentColor" fill-rule="evenodd" d="M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 17 0 8.5 8.5 0 0 1-17 0Z" clip-rule="evenodd"></path><path fill="currentColor" fill-rule="evenodd" d="M15.093 15.093a1 1 0 0 1 1.414 0l5.2 5.2a1 1 0 0 1-1.414 1.414l-5.2-5.2a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path></svg></div></div></div></header><div data-rnwrdesktop-hidden="true" data-rnwr700-visible="true" class="css-175oi2r"></div><div data-rnwrdesktop-18u37iz="true" data-rnwr700-eqz5dr="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-14lw9ot"><div class="view_manYY publicContainer_11UZS"><div data-rnwrdesktop-visible="true" data-rnwr1430-visible="true" data-rnwr700-hidden="true" class="css-175oi2r r-k200y r-14lw9ot r-18ayb63 r-13l2t4g r-12dqhl9 r-1rnoaur r-gtdqiz r-1fo40xd r-18u37iz r-17s6mgv" data-testid="page.desktopTableOfContents"><nav aria-label="Table of contents" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ipicw7 r-eqz5dr"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-puj83k"><div class="css-175oi2r r-150rngu r-eqz5dr r-11yh6sk r-1rnoaur r-1sncvnh r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r r-1yzf0co r-1adewhw"><!--$--><div class="css-175oi2r"><a href="../index.html" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-1b00too-hover="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh r-15zivkp" style="transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1bnj018" style="width:17.92px;height:17.92px"><span class="emj-objects _1f4c3" role="img" title="page with curl" aria-label="page with curl" style="transform:translate(-50%, -50%) scale(0.28)">📃</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018">Правила Сервиса</div></a></div><!--/$--><!--$--><div class="css-175oi2r"><a href="https://tindmeet.ru/" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-1b00too-hover="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh r-15zivkp" style="transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1bnj018" style="width:17.92px;height:17.92px"><span class="emj-travel _1f3e0" role="img" title="house" aria-label="house" style="transform:translate(-50%, -50%) scale(0.28)">🏠</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018">На главную</div><div class="css-175oi2r r-1jkjb r-12zb1j4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="r-1rasi3h" style="vertical-align:middle;width:18px;height:18px"><g fill="currentColor" clip-path="url(#ExternalLink_svg__a)"><path d="M7 .9a.6.6 0 1 1 0 1.2H3.5a1.4 1.4 0 0 0-1.4 1.4v9a1.4 1.4 0 0 0 1.4 1.4h9a1.4 1.4 0 0 0 1.4-1.4V9a.6.6 0 1 1 1.2 0v3.5a2.6 2.6 0 0 1-2.6 2.6h-9a2.6 2.6 0 0 1-2.6-2.6v-9A2.6 2.6 0 0 1 3.5.9H7Z"></path><path d="M9.9 1.5a.6.6 0 0 0 .6.6h2.552L9.076 6.076a.6.6 0 0 0 .848.848L13.9 2.95V5.5a.6.6 0 1 0 1.2 0v-4a.6.6 0 0 0-.6-.6h-4a.6.6 0 0 0-.6.6Z"></path></g><defs><clipPath id="ExternalLink_svg__a"><path fill="#fff" d="M0 0h16v16H0z"></path></clipPath></defs></svg></div></a></div><!--/$--><!--$--><div class="css-175oi2r r-1r5su4o"><div data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" class="css-175oi2r r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh r-15zivkp"><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1enofrn r-1kfrs79 r-19r33im r-14yzgew r-tsynxw r-1rasi3h">Использование</div></div><div class="css-175oi2r r-bnwqim r-11wrixw"><div class="css-175oi2r"><!--$--><div class="css-175oi2r"><a href="verification.html" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-1b00too-hover="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh r-15zivkp" style="transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1bnj018" style="width:17.92px;height:17.92px"><span class="emj-objects _1f4f2" role="img" title="mobile phone with arrow" aria-label="mobile phone with arrow" style="transform:translate(-50%, -50%) scale(0.28)">📲</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018">Верификация</div></a></div><!--/$--></div><div class="css-175oi2r"><!--$--><div class="css-175oi2r"><a href="sozdanie-ankety.html" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh" style="background-color:rgba(133,163,224,0.10);transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1ghhsy9" style="width:17.92px;height:17.92px"><span class="emj-objects _1f4c7" role="img" title="card index" aria-label="card index" style="transform:translate(-50%, -50%) scale(0.28)">📇</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-hbpseb r-1ghhsy9 r-b88u0q">Создание анкеты</div></a></div><!--/$--></div></div></div><!--/$--><!--$--><div class="css-175oi2r r-1r5su4o"><div data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" class="css-175oi2r r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh"><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1enofrn r-1kfrs79 r-19r33im r-14yzgew r-tsynxw r-1rasi3h">Вопросы и ответы</div></div><div class="css-175oi2r r-bnwqim r-11wrixw"><div class="css-175oi2r"><!--$--><div class="css-175oi2r"><a href="../faq/po-funkcionalu.html" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-1b00too-hover="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh r-15zivkp" style="transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1bnj018" style="width:17.92px;height:17.92px"><span class="emj-objects _2699" role="img" title="gear" aria-label="gear" style="transform:translate(-50%, -50%) scale(0.28)">⚙</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018">По функционалу</div></a></div><!--/$--></div><div class="css-175oi2r"><!--$--><div class="css-175oi2r"><a href="../faq/po-oplate.html" data-rnwrdesktop-fnigne="true" data-rnwr700-13l2t4g="true" data-rnwi-1b00too-hover="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-18u37iz r-1ceczpf r-1pn2ns4 r-1kb76zh" style="transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><div class="css-175oi2r r-4qtqp9 r-bnwqim r-1bnj018" style="width:17.92px;height:17.92px"><span class="emj-objects _1f4b3" role="img" title="credit card" aria-label="credit card" style="transform:translate(-50%, -50%) scale(0.28)">💳</span></div></div><div dir="auto" class="css-1rynq56 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-oyd9sg r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018">По оплате</div></a></div><!--/$--></div></div></div><!--/$--></div></div></div><div class="css-175oi2r r-1p0dtai r-u8s1d r-13qz1uu r-184en5c"><div class="css-175oi2r r-10ptun7" style="background-image:linear-gradient(3.141592653589793rad,#ffffff00,#ffffff)"></div><div class="css-175oi2r r-ymttw5 r-1l7z4oj r-14lw9ot"><a href="https://www.gitbook.com/?utm_source=content&amp;utm_medium=trademark&amp;utm_campaign=Lcg6wJ8cGQ7PVASLE7S2" data-rnwi--1kkij8h-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-13yb0iz-focus-visible="true" data-rnwi-handle="nearest" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-18u37iz r-1awozwy r-1b00too r-1xfd6ze r-1yzf0co r-ymttw5" style="transition-duration:0.15s"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 30" preserveAspectRatio="xMidYMid meet" data-rnwi--1kkij8h-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-13yb0iz-focus-visible="true" data-rnwi-handle="nearest" class="r-1rasi3h" style="vertical-align:middle;width:28px;height:28px"><path fill="currentColor" d="M13.478 15.34c1.564.904 2.347 1.355 3.206 1.356.859 0 1.642-.45 3.208-1.35l9.983-5.738a1.452 1.452 0 0 0 0-2.519l-9.987-5.74C18.324.449 17.542-.001 16.683 0c-.858 0-1.64.45-3.204 1.351L4.894 6.295l-.125.072A9.638 9.638 0 0 0 0 14.617v.289a9.639 9.639 0 0 0 4.885 8.316l5.377 3.105c3.134 1.809 4.7 2.714 6.422 2.714 1.72 0 3.288-.903 6.422-2.71l5.677-3.273c1.57-.904 2.355-1.357 2.786-2.103.431-.746.431-1.652.431-3.463v-3.5a1.385 1.385 0 0 0-2.076-1.202l-11.64 6.692c-.782.449-1.172.673-1.6.673-.43 0-.82-.224-1.601-.672l-7.88-4.523c-.394-.226-.591-.34-.75-.36a.803.803 0 0 0-.846.493c-.06.148-.06.376-.057.83.002.336.003.503.034.657.07.345.252.658.517.89.118.103.263.187.553.354l8.424 4.862c.784.452 1.175.678 1.605.678.43 0 .822-.226 1.606-.677l10.325-5.952c.267-.154.401-.231.502-.173.1.058.1.212.1.521v1.588c0 .453 0 .68-.108.866-.108.186-.304.3-.696.525l-8.516 4.91c-1.568.903-2.352 1.355-3.213 1.355-.86 0-1.643-.453-3.21-1.359l-7.968-4.602-.05-.029a5.472 5.472 0 0 1-2.71-4.697v-1.515c0-1.068.568-2.055 1.492-2.59a2.638 2.638 0 0 1 2.641-.003l6.6 3.809Z"></path></svg><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-1qhn6m8"><div dir="auto" data-rnwinearest--1kkij8h-hover-focus="true" data-rnwi-handle="nearest" class="css-1rynq56 r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1rasi3h">Powered By <span class="css-1qaijid r-b88u0q">GitBook</span></div></div></a></div></div></nav></div><div class="css-175oi2r r-13awgt0" style="background-color:rgba(255,255,255,1.00)"><!--$--><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz"><div class="view_manYY pageWrapper_BkhZI noneVertical_jpmaI autoHorizontal_dqmM- flex1_aMpAE column_C3yiR"><main class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-eqz5dr"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1280-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY relative_F68jE column_C3yiR xlargeTop_38ZbM largeBottom_v1r32"><div class="view_manYY pageControls_65PGe revealOnHover_QTUA- smallTop_6u89Q row_PhhRi xsmallColumnGap_qKMbq"><div role="button" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="button" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-18kxxzh r-1cmwbt1 r-1777fci r-1ny4l3l r-z2wwpe r-z80fyv r-1pn2ns4 r-1bnj018 r-gy4na3" style="transition-duration:0.15s"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" data-rnwibutton--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" class="r-h7gdob" style="vertical-align:middle;width:16px;height:16px"><path fill="currentColor" fill-rule="evenodd" d="M15.6 4A2.6 2.6 0 0 0 13 1.4H3A2.6 2.6 0 0 0 .4 4v6A2.6 2.6 0 0 0 3 12.6h.092v2.117a.6.6 0 0 0 .987.46l2.672-2.248a1.4 1.4 0 0 1 .901-.329H13a2.6 2.6 0 0 0 2.6-2.6V4ZM13 2.6A1.4 1.4 0 0 1 14.4 4v6a1.4 1.4 0 0 1-1.4 1.4H7.652a2.6 2.6 0 0 0-1.673.61L4.292 13.43V12a.6.6 0 0 0-.6-.6H3A1.4 1.4 0 0 1 1.6 10V4A1.4 1.4 0 0 1 3 2.6h10Z" clip-rule="evenodd"></path></svg><div class="css-175oi2r r-1wbh5a2"><div dir="auto" data-rnwibutton--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" class="css-1rynq56 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a r-gg6oyi r-1enofrn r-16dba41 r-14yzgew r-h7gdob">Comment on page</div></div></div></div><div class="view_manYY row_PhhRi justifySpaceBetween_js4s1 alignCenter_zl3iW"><div class="css-175oi2r r-18u37iz r-1ro0kt6 r-16y2uox r-1wbh5a2"><div data-rnwrdesktop-h3s6tt="true" data-rnwr700-iyfy8q-eu3ka="true" class="css-175oi2r r-18u37iz r-17s6mgv r-1awozwy"><div data-nudge-icon="true" data-rnwrdesktop-u8s1d-1qhn6m8-i023vh="true" data-rnwr700-bnwqim-gy4na3-i023vh="true" class="css-175oi2r"><div class="css-175oi2r r-4qtqp9 r-bnwqim" style="width:24.32px;height:24.32px"><span class="emj-objects _1f4c7" role="img" title="card index" aria-label="card index" style="transform:translate(-50%, -50%) scale(0.38)">📇</span></div></div></div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><h1 data-rnwrdesktop-gg6oyi-xb2eav-1dn12g7-b88u0q="true" data-rnwr700-gg6oyi-1ui5ee8-nwxazl-b88u0q="true" class="r-1xnzce8 r-crgep1 r-1nf4jbm" data-testid="page.title">Создание анкеты</h1></div></div><div aria-label="Page actions" role="button" data-rnwi-1iadl42-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="button" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-18kxxzh r-1cmwbt1 r-1777fci r-1ny4l3l r-1r8g8re r-1pa6394 r-18c69zk r-mk0yit r-1acpoxo" style="transition-duration:0.15s" data-testid="pageToolbar.paletteButton"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" data-rnwibutton-37p410-hover-focus="true" data-rnwi-handle="nearest" class="r-h7gdob" style="vertical-align:middle;width:18px;height:18px"><path fill="currentColor" d="M8 2.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 6.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 11.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"></path></svg></div></div><div class="view_manYY row_PhhRi justifySpaceBetween_js4s1 alignCenter_zl3iW"><div class="css-175oi2r r-1wzrnnt r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div dir="auto" class="css-1rynq56 r-gg6oyi r-adyw6z r-16dba41 r-17rnw9f r-1rasi3h r-1xnzce8">Инструкция по созданию анкеты в сервисе знакомств Tind Meet</div></div></div></div></div></div></div></div><div data-rnwrdesktop-1uwte3a="true" class="css-175oi2r"><div class="css-175oi2r r-bnwqim"><div data-testid="page.contentEditor" data-slate-editor="true" data-document-key="2a670163a63240cab12a6784b862b410" data-key="2a670163a63240cab12a6784b862b410" autoCorrect="on" spellcheck="true" style="outline:none;white-space:pre-wrap;word-wrap:break-word"><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="1a12a88a35e34cc2a53bb67db8cd70c1" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii smallTop_crzBC smallBottom_BmSGf"><div data-block-content="1a12a88a35e34cc2a53bb67db8cd70c1" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="9717b4fad7e5428cb156dd3c5b003191"><strong data-slate-leaf="true" data-offset-key="9717b4fad7e5428cb156dd3c5b003191:0" class="r-crgep1 r-b88u0q">Для создания анкеты:</strong></span></div></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="6d018bb8e697418f9fa942a1431413d5" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii mediumTop_QDiZG mediumBottom_jdYUb"><div data-block-content="6d018bb8e697418f9fa942a1431413d5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><ol data-key="6d018bb8e697418f9fa942a1431413d5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="0336e621ff6e4879b20787c54951dc48" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii noneTop_aMiQj xsmallBottom_NnBZ6"><div data-block-content="0336e621ff6e4879b20787c54951dc48" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><span contenteditable="false" class="r-crgep1 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm" style="height:24px;width:16px">1.</span><div class="css-175oi2r r-13awgt0"><div data-key="d9594679ec684ce0815170c09805d502" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="416a1a623b994f65b3c32366d197945e"><span data-offset-key="416a1a623b994f65b3c32366d197945e:0">Передите в телеграм бот </span></span><!--$--><a href="https://t.me/tindmeetuz_bot" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="link" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1471scf" style="transition-duration:0.15s"><span data-key="ee60e3a99cdb4e5abc7349b557283db8" data-rnwilink--1ghhsy9-="true" data-rnwilink--1e1gmzv-1ddef8g-hover="true" data-rnwi-handle="nearest" class="r-crgep1"><span data-key="e81aa3321351474f868db088b31e83ee"><mark data-slate-leaf="true" data-offset-key="e81aa3321351474f868db088b31e83ee:0" class="r-crgep1" style="color:rgba(65,142,167,1.00);background-color:inherit">@TindMeetBot</mark></span></span></a><!--/$--><span data-key="0e919c3a2e9d48a6897c3b328a990dff"><span data-offset-key="0e919c3a2e9d48a6897c3b328a990dff:0"><span data-slate-zero-width="z">​</span></span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="1b834354646c459d9f05d0a976064740" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="1b834354646c459d9f05d0a976064740" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><span contenteditable="false" class="r-crgep1 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm" style="height:24px;width:16px">2.</span><div class="css-175oi2r r-13awgt0"><div data-key="e899ad6bd5f04dc8aa9acce7ec0038d7" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="51c19163830349669d9ca8a8435d42d9"><span data-offset-key="51c19163830349669d9ca8a8435d42d9:0">Перейдите в раздел 😍 </span><strong data-slate-leaf="true" data-offset-key="51c19163830349669d9ca8a8435d42d9:1" class="r-crgep1 r-b88u0q">Анкеты</strong><span data-offset-key="51c19163830349669d9ca8a8435d42d9:2"> в нижнем меню бота и откройте веб-приложение по кнопке в чате</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="66b1df8951c341919c0062a3a36aaf66" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="66b1df8951c341919c0062a3a36aaf66" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><span contenteditable="false" class="r-crgep1 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm" style="height:24px;width:16px">3.</span><div class="css-175oi2r r-13awgt0"><div data-key="c123199b6dd54b77806874b5faf2a8cd" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="ef04079394094e358582d93021338c67"><span data-offset-key="ef04079394094e358582d93021338c67:0">При первом запуске, ознакомьтесь с правилами сервиса и подтвердите свое согласие с правилами сервиса</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="acae2cdc3eed4f228cd2711ca9dea52c" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D noneBottom_ovUyz"><div data-block-content="acae2cdc3eed4f228cd2711ca9dea52c" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><span contenteditable="false" class="r-crgep1 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm" style="height:24px;width:16px">4.</span><div class="css-175oi2r r-13awgt0"><div data-key="64c9733550ac4b9c8f5c9a066deb76ae" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="5c52e466c8d8470e81c683557615ec9a"><span data-offset-key="5c52e466c8d8470e81c683557615ec9a:0">Далее необходимо заполнить обязательные данные самой анкеты</span></span></div></div></div></div></li></div></div></ol></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="c3b5b3f7a33344f69e0cf54b47a51fe4" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii largeTop_ejwCW smallBottom_BmSGf"><div data-block-content="c3b5b3f7a33344f69e0cf54b47a51fe4" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><h3 class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-18u37iz r-obd0qt" id="obyazatelnye-k-zapolneniyu-dannye-ankety"><div dir="auto" data-rnwrdesktop-gg6oyi-adyw6z-135wba7-b88u0q="true" data-rnwr700-gg6oyi-ubezar-135wba7-1kfrs79="true" class="css-1rynq56 r-1nf4jbm r-fdjqy7 r-1xnzce8" id="text-obyazatelnye-k-zapolneniyu-dannye-ankety"><span data-key="2a60c365ad944dceaa46452c57babab7"><span data-offset-key="2a60c365ad944dceaa46452c57babab7:0">Обязательные к заполнению данные анкеты</span></span><a href="#obyazatelnye-k-zapolneniyu-dannye-ankety" aria-label="Direct link to heading" data-rnwi-1rasi3h-="true" data-rnwi--1ghhsy9-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-1qaijid r-1awozwy r-xoduu5 r-1jkjb r-orgf3d r-1loqt21"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" role="presentation" style="vertical-align:middle;width:18px;height:18px"><path fill="currentColor" fill-rule="evenodd" d="M7.42 1.925a.6.6 0 0 1 .405.745L7.167 4.9h3.998l.76-2.57a.6.6 0 1 1 1.15.34l-.659 2.23H14a.6.6 0 0 1 0 1.2h-1.938l-1.123 3.8H13a.6.6 0 0 1 0 1.2h-2.415l-.76 2.57a.6.6 0 0 1-1.15-.34l.658-2.23H5.335l-.76 2.57a.6.6 0 1 1-1.15-.34l.658-2.23H2a.6.6 0 1 1 0-1.2h2.438l1.123-3.8H3a.6.6 0 0 1 0-1.2h2.915l.76-2.57a.6.6 0 0 1 .745-.405ZM6.812 6.1 5.689 9.9h3.999l1.123-3.8H6.812Z" clip-rule="evenodd"></path></svg></a></div></h3></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="cf4ff22783d04dab91f1ab2649b9df80" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii mediumTop_QDiZG mediumBottom_jdYUb"><div data-block-content="cf4ff22783d04dab91f1ab2649b9df80" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><ul data-key="cf4ff22783d04dab91f1ab2649b9df80" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="f13a8f3c56c34f358bd930e208eb3e0c" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii noneTop_aMiQj xsmallBottom_NnBZ6"><div data-block-content="f13a8f3c56c34f358bd930e208eb3e0c" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="2c5d7f32eb80498bbce9c654c2850062" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="fa07a5edbc1f413ab21eadb8035ad065"><span data-offset-key="fa07a5edbc1f413ab21eadb8035ad065:0">Загрузить фотографию (реальное фото)</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="e0fa14d9a19a418ebdcf42c2fff37144" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="e0fa14d9a19a418ebdcf42c2fff37144" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="34f6ea501b394493bf15744e6340eba8" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="49ea1766969b4f659d8e9a88051e87db"><span data-offset-key="49ea1766969b4f659d8e9a88051e87db:0">Ввести имя</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="0b9d6aab98f24ee4a81e32f0fe37b4b0" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="0b9d6aab98f24ee4a81e32f0fe37b4b0" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="68868d1e49a84be28bc4db8aee08a4a5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="24864a8d6886498489070ed156638e9b"><span data-offset-key="24864a8d6886498489070ed156638e9b:0">Дату рождения</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="640bcd06059d47cab09b68e0f1a564cb" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="640bcd06059d47cab09b68e0f1a564cb" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="a1a3ac5e899e4dc9909ad3004560dd25" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="c61db24c4b3345759773f3361f244857"><span data-offset-key="c61db24c4b3345759773f3361f244857:0">Информацию о себе</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="faf7f2a576d94a94a4e9d70020dd2ea8" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="faf7f2a576d94a94a4e9d70020dd2ea8" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="4a0f6873d90f4b5f9f016d8cd318ee96" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="71a632c225474b70984ed7b064a8d4c1"><span data-offset-key="71a632c225474b70984ed7b064a8d4c1:0">Пол</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="5f6daa79dca443cc8843965539de8b2f" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="5f6daa79dca443cc8843965539de8b2f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="1fc69d25b1194be191291963325a26d1" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="bc20aecebf7e4fdcaee90429b7b81845"><span data-offset-key="bc20aecebf7e4fdcaee90429b7b81845:0">Интересы поиска</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="356be95b2cd440ec9c0872edbec8b5e5" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D noneBottom_ovUyz"><div data-block-content="356be95b2cd440ec9c0872edbec8b5e5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="e4c761b893c443f2b18de7e0e978c07d" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="95ffcc0212a64aa1b9025301bc4dd61a"><span data-offset-key="95ffcc0212a64aa1b9025301bc4dd61a:0">Область и город проживания и поиска (район по желанию)</span></span></div></div></div></div></li></div></div></ul></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="3df57523428a4b39b1eed9d61523c38f" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii largeTop_ejwCW smallBottom_BmSGf"><div data-block-content="3df57523428a4b39b1eed9d61523c38f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><h3 class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-18u37iz r-obd0qt" id="neobyazatelnye-k-zapolneniyu-dannye-ankety"><div dir="auto" data-rnwrdesktop-gg6oyi-adyw6z-135wba7-b88u0q="true" data-rnwr700-gg6oyi-ubezar-135wba7-1kfrs79="true" class="css-1rynq56 r-1nf4jbm r-fdjqy7 r-1xnzce8" id="text-neobyazatelnye-k-zapolneniyu-dannye-ankety"><span data-key="13a4b434e73e4298941ea1f2a1e99f1b"><span data-offset-key="13a4b434e73e4298941ea1f2a1e99f1b:0">Необязательные к заполнению данные анкеты</span></span><a href="#neobyazatelnye-k-zapolneniyu-dannye-ankety" aria-label="Direct link to heading" data-rnwi-1rasi3h-="true" data-rnwi--1ghhsy9-hover-focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" class="css-1qaijid r-1awozwy r-xoduu5 r-1jkjb r-orgf3d r-1loqt21"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" role="presentation" style="vertical-align:middle;width:18px;height:18px"><path fill="currentColor" fill-rule="evenodd" d="M7.42 1.925a.6.6 0 0 1 .405.745L7.167 4.9h3.998l.76-2.57a.6.6 0 1 1 1.15.34l-.659 2.23H14a.6.6 0 0 1 0 1.2h-1.938l-1.123 3.8H13a.6.6 0 0 1 0 1.2h-2.415l-.76 2.57a.6.6 0 0 1-1.15-.34l.658-2.23H5.335l-.76 2.57a.6.6 0 1 1-1.15-.34l.658-2.23H2a.6.6 0 1 1 0-1.2h2.438l1.123-3.8H3a.6.6 0 0 1 0-1.2h2.915l.76-2.57a.6.6 0 0 1 .745-.405ZM6.812 6.1 5.689 9.9h3.999l1.123-3.8H6.812Z" clip-rule="evenodd"></path></svg></a></div></h3></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="3a5399a8a1be4ac38e40db1cad9289fc" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii mediumTop_QDiZG mediumBottom_jdYUb"><div data-block-content="3a5399a8a1be4ac38e40db1cad9289fc" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><ul data-key="3a5399a8a1be4ac38e40db1cad9289fc" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="bf0006d639064bc38ba62d45ec2d2d44" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii noneTop_aMiQj xsmallBottom_NnBZ6"><div data-block-content="bf0006d639064bc38ba62d45ec2d2d44" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="7aa6bf896c1141a2b00db46e7fa59eb4" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="7c238939630c46ca9e2e5d5e2dab29d2"><span data-offset-key="7c238939630c46ca9e2e5d5e2dab29d2:0">Интересы, увлечения (макс. 6 интересов)</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="17b7dcc7f05c4eb99df646e837fb311c" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="17b7dcc7f05c4eb99df646e837fb311c" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="e11f922d9a5d478aa1e3f3df0aee1959" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="5daaab8373cb4cf6a0182e166076b7b7"><span data-offset-key="5daaab8373cb4cf6a0182e166076b7b7:0">Рост</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="78ded59c7fad4f2abc7177c00bc27d2d" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="78ded59c7fad4f2abc7177c00bc27d2d" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="08a3b59220394e2bb3ed04a5a739a78e" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="52a01e86ba0c4cc99232d4422a28f5cf"><span data-offset-key="52a01e86ba0c4cc99232d4422a28f5cf:0">Знак зодиака</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="09cf8e9f5171477392a7b6229bfb2a1c" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="09cf8e9f5171477392a7b6229bfb2a1c" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="1fe4d1c8e0644fa48e146b4bcce0e98e" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="c5b97033141f4bc6bbc3d7ee14aa17ec"><span data-offset-key="c5b97033141f4bc6bbc3d7ee14aa17ec:0">Образование</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="dd0a38504f3c413186b022f94f39ec89" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="dd0a38504f3c413186b022f94f39ec89" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="ecd4c6a174a5453988f0d23fbc60d7ec" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="b6a56a139f804d5d8eb567cfb415cce3"><span data-offset-key="b6a56a139f804d5d8eb567cfb415cce3:0">Планы на семью</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="3e36c1dbe22b414eb2311780f4d8f6bc" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="3e36c1dbe22b414eb2311780f4d8f6bc" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="8a4ef28ce3cf41059c149d0375965389" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="8aeabe2a03f44691b6c8f0222dae0671"><span data-offset-key="8aeabe2a03f44691b6c8f0222dae0671:0">Стиль общения</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="b5c20dcdc7b14627bd50382aeae4b050" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="b5c20dcdc7b14627bd50382aeae4b050" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="307368a95f2240e390191d8c4aa47e56" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="b8a18957acab436b9f04ad16904a9ac9"><span data-offset-key="b8a18957acab436b9f04ad16904a9ac9:0">Язык любви</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="0616ad2e916a4c0e9f92c417942e0126" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="0616ad2e916a4c0e9f92c417942e0126" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="4f52eb8eda0e4e5285ca9d865ebdc98a" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="15a35faba4be453d88f635d7459da4cb"><span data-offset-key="15a35faba4be453d88f635d7459da4cb:0">Питомцы</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="fa8777b19e6146f78670df0990c5c03a" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="fa8777b19e6146f78670df0990c5c03a" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="d19958201c2f48b293667bf757dd91ec" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="ae2e7fdddf2a48cd9aea30a82b729153"><span data-offset-key="ae2e7fdddf2a48cd9aea30a82b729153:0">Алкоголь</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="164616eafbb64fa7aa819d729783184a" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="164616eafbb64fa7aa819d729783184a" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="1e2031174ed34a418b042010cf83477f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="5a391f19604c491f8f1fd2e6362d4cc7"><span data-offset-key="5a391f19604c491f8f1fd2e6362d4cc7:0">Курение</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="77c194dd06a44c8bb7690d4a713347c5" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="77c194dd06a44c8bb7690d4a713347c5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="db47ebb44f044974babefe35433048a7" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="452cf142bc004e80934f144bf8672f76"><span data-offset-key="452cf142bc004e80934f144bf8672f76:0">Тренировка</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="a7dc9b8a085d4087afed1d4a6eab62f2" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="a7dc9b8a085d4087afed1d4a6eab62f2" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="d37c0f19560848d0ab8a4486647e4312" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="db1c6582b8464150b6a4d153026b0d6d"><span data-offset-key="db1c6582b8464150b6a4d153026b0d6d:0">Социальные сети</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="35f0b70a9b53498c84661f749e90a771" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D xsmallBottom_NnBZ6"><div data-block-content="35f0b70a9b53498c84661f749e90a771" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="4b97022eb8b547298710297603d611e7" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="255f7956839348df81888e015f3597cc"><span data-offset-key="255f7956839348df81888e015f3597cc:0">Предпочтения в еде</span></span></div></div></div></div></li></div></div><div class="css-175oi2r"><div class="css-175oi2r"><li data-key="8ac5bc6b014d429aa6684279ca7cb30f" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii xsmallTop_ABm9D noneBottom_ovUyz"><div data-block-content="8ac5bc6b014d429aa6684279ca7cb30f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-6koalj r-18u37iz r-bnwqim"><div contenteditable="false" class="r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-1mlwlqe r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1awozwy r-6koalj r-18u37iz r-1jkjb r-1kb76zh" style="height:24px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="vertical-align:middle;width:12px;height:12px"><path fill="currentColor" fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg></div><div class="css-175oi2r r-13awgt0"><div data-key="cf94dc12dccc41e5b8163f4f9548d42a" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="425a5e6a020f4987a96359adaec074c6"><span data-offset-key="425a5e6a020f4987a96359adaec074c6:0">Привычки во сне</span></span></div></div></div></div></li></div></div></ul></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="87b3c4971a1e48a4871ad03771f3a17f" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii smallTop_crzBC smallBottom_BmSGf"><div data-block-content="87b3c4971a1e48a4871ad03771f3a17f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="46caff044124487d97339f2227fa46d3"><span data-offset-key="46caff044124487d97339f2227fa46d3:0">После заполнения всех необходимых полей анкеты нажмите кнопку &quot;Сохранить&quot;</span></span></div></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="a848a5041b244a8d9f1ec7b888cda36a" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii smallTop_crzBC smallBottom_BmSGf"><div data-block-content="a848a5041b244a8d9f1ec7b888cda36a" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="b2a2c8399e014ceca0a06d7fecb15527"><span data-offset-key="b2a2c8399e014ceca0a06d7fecb15527:0">После сохранения вам станет доступен просмотр анкет других пользователей</span></span></div></div></div></div></div></div></div></div></div></div><div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM-"><div data-rnwr1490-1777fci="true" data-rnwr700-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz r-1777fci"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div class="css-175oi2r"><div data-key="6509df92d6ea435984d9ec4af8d4214f" class="view_manYY relative_F68jE column_C3yiR mediumVertical_-Vaii smallTop_crzBC smallBottom_BmSGf"><div data-block-content="6509df92d6ea435984d9ec4af8d4214f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-eqz5dr r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010 r-1ro0kt6 r-16y2uox r-1wbh5a2"><div dir="auto" class="css-1rynq56 r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-1nf4jbm r-fdjqy7 r-1xnzce8"><span data-key="92c0d596af1642d1afae5ab0310fd5f3"><span data-offset-key="92c0d596af1642d1afae5ab0310fd5f3:0">Если у вас остались вопросы, задайте их в телеграм: </span></span><!--$--><a href="https://t.me/SanjarSupport" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="link" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1471scf" style="transition-duration:0.15s"><span data-key="e312850a048a462abb16116476561334" data-rnwilink--1ghhsy9-="true" data-rnwilink--1e1gmzv-1ddef8g-hover="true" data-rnwi-handle="nearest" class="r-crgep1"><span data-key="557d52e28ffd4ff38373e4d6bbd26b80"><mark data-slate-leaf="true" data-offset-key="557d52e28ffd4ff38373e4d6bbd26b80:0" class="r-crgep1" style="color:rgba(65,142,167,1.00);background-color:inherit">@TindMeetAdmin</mark></span></span></a><!--/$--><span data-key="0c6a435620de4e678d4bbad86139e072"><span data-offset-key="0c6a435620de4e678d4bbad86139e072:0"><span data-slate-zero-width="z">​</span></span></span></div></div></div></div></div></div></div></div></div></div></div></div><div class="view_manYY blockWrapper_8BIg7 noneVertical_jpmaI autoHorizontal_dqmM- largeTop_jdaOn"><div data-rnwr1280-1777fci="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-18u37iz"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div data-rnwrdesktop-18u37iz="true" data-rnwr970-eqz5dr="true" class="css-175oi2r r-1peese0"><a href="verification.html" data-rnwrdesktop-1kb76zh="true" data-rnwr970-61z16t-5oul0u="true" data-rnwi-u529wo-aq1qub-c1zw6o-1khlhp8-1cut0bx-na6qhi--hover="true" data-rnwi--1tgwseu--focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="BaseCard" class="css-175oi2r r-lrvibr r-1loqt21 r-1otgn73 r-190qawg r-z2wwpe r-rs99b7 r-1udh08x r-1clhhh9 r-18u37iz r-1awozwy r-nsbfu8 r-1ro0kt6 r-16y2uox r-1wbh5a2" style="background-color:rgba(255,255,255,1.00);transition-duration:0.15s"><div class="css-175oi2r r-88pszg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" data-rnwibasecard--1ghhsy9-hover="true" data-rnwi-handle="nearest" class="r-1rasi3h" style="vertical-align:middle;width:24px;height:24px"><path fill="currentColor" fill-rule="evenodd" d="M6.924 3.576a.6.6 0 0 1 0 .848L3.95 7.4H13.5a.6.6 0 1 1 0 1.2H3.949l2.975 2.976a.6.6 0 0 1-.848.848l-4-4a.6.6 0 0 1 0-.848l4-4a.6.6 0 0 1 .848 0Z" clip-rule="evenodd"></path></svg></div><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2 r-obd0qt"><div class="css-175oi2r"><div dir="auto" class="css-1rynq56 r-gg6oyi r-1enofrn r-16dba41 r-14yzgew r-1rasi3h">Использование - <!-- -->Previous</div></div><div dir="auto" data-rnwibasecard--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" class="css-1rynq56 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a r-gg6oyi r-ubezar r-135wba7 r-majxgm r-1nf4jbm">Верификация</div></div></a><a href="../faq/po-funkcionalu.html" data-rnwrdesktop-1jkjb="true" data-rnwr970-11wrixw-knv0ih="true" data-rnwi-u529wo-aq1qub-c1zw6o-1khlhp8-1cut0bx-na6qhi--hover="true" data-rnwi--1tgwseu--focus="true" data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="BaseCard" class="css-175oi2r r-lrvibr r-1loqt21 r-1otgn73 r-190qawg r-z2wwpe r-rs99b7 r-1udh08x r-1clhhh9 r-18u37iz r-1awozwy r-nsbfu8 r-1ro0kt6 r-16y2uox r-1wbh5a2" style="background-color:rgba(255,255,255,1.00);transition-duration:0.15s"><div class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div class="css-175oi2r"><div dir="auto" class="css-1rynq56 r-gg6oyi r-1enofrn r-16dba41 r-14yzgew r-1rasi3h">Next<!-- --> - Вопросы и ответы</div></div><div dir="auto" data-rnwibasecard--1ghhsy9-hover-focus="true" data-rnwi-handle="nearest" class="css-1rynq56 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a r-gg6oyi r-ubezar r-135wba7 r-majxgm r-1nf4jbm">По функционалу</div></div><div class="css-175oi2r r-1ow6zhx"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" data-rnwibasecard--1ghhsy9-hover="true" data-rnwi-handle="nearest" class="r-1rasi3h" style="vertical-align:middle;width:24px;height:24px"><path fill="currentColor" fill-rule="evenodd" d="M9.076 3.576a.6.6 0 0 1 .848 0l4 4a.6.6 0 0 1 0 .848l-4 4a.6.6 0 0 1-.848-.848L12.052 8.6H2.5a.6.6 0 0 1 0-1.2h9.552L9.076 4.424a.6.6 0 0 1 0-.848Z" clip-rule="evenodd"></path></svg></div></a></div><div class="css-175oi2r r-1ygmrgt r-1yv4afn r-5kkj8d"><div data-rnwrdesktop-18u37iz="true" data-rnwr1024-eqz5dr="true" class="css-175oi2r r-1awozwy r-1wtj0ep"><div data-rnwr1024-1ifxtd0="true" class="css-175oi2r r-1ro0kt6 r-16y2uox r-1wbh5a2"><div dir="auto" class="css-1rynq56 r-1rasi3h r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb">Last modified <span aria-label="2023-09-08 12:00 UTC" class="css-1qaijid">2mo ago</span></div></div></div></div></div></div></div></div></div></main></div><aside aria-label="Page outline" data-rnwrdesktop-166pt5r="true" data-rnwr1280-hidden="true" data-rnwr700-hidden="true" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-417010 r-k200y r-1rnoaur r-gtdqiz r-pw2am6 r-146iojx" style="top:104px;max-height:calc(100vh - 104px)" data-testid="page.outline"><div class="css-175oi2r r-146iojx"><div class="css-175oi2r r-18u37iz r-1awozwy r-1guathk r-5oul0u"><div dir="auto" class="css-1rynq56 r-gg6oyi r-1enofrn r-19r33im r-14yzgew r-tsynxw r-1rasi3h r-b88u0q">On this page</div></div><div data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-18u37iz r-1guathk r-855088 r-ms8t9i r-15zivkp r-lqms97 r-14gqq1x r-dnmrzs r-7xmw5f" style="transition-duration:0.15s"><div dir="auto" data-rnwinearest--1ghhsy9-hover="true" data-rnwi-handle="nearest" class="css-1rynq56 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018 r-1jkjb">Обязательные к заполнению данные анкеты</div></div><div data-rnwi-5xr8s6-dse9kg-2fw26j-cb7i37-focus-visible="true" data-rnwi-handle="nearest" tabindex="0" class="css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-18u37iz r-1guathk r-855088 r-ms8t9i r-15zivkp r-lqms97 r-14gqq1x r-dnmrzs r-7xmw5f" style="transition-duration:0.15s"><div dir="auto" data-rnwinearest--1ghhsy9-hover="true" data-rnwi-handle="nearest" class="css-1rynq56 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a r-gg6oyi r-1b43r93 r-16dba41 r-hbpseb r-1bnj018 r-1jkjb">Необязательные к заполнению данные анкеты</div></div></div></aside></div><!--/$--></div></div></div><!--/$--></div></div></div>
+        <script>
+            // Rendered with GitBook 10.9.504-4b0a8b2dd63c0875252b185e926adba2d34bc20b-7062782170
+            // Space Lcg6wJ8cGQ7PVASLE7S2
+            
+            window.__GITBOOK_WAS_SSR = true;
+            window.__GITBOOK_INITIAL_PROPS__ = "㞂‖འ츂аⶁ䱀⸐ӂز聴〉朖ꢣā㠊㐠Ѡ鐨 豠戣⃛놀ɚ㱤椱膃\u0003鑴Ǩ鐣霠聳戱顀耚삮ࡈՃ邗ᓐ⚒ꎃਆ态粚鮊ⰁѠ屁\ud84c증퀁᠀\ud801㠀頁頢Ř戀堒餐兂뇃鎒\u0019䫋诜䄽뱡簀萁㳸ŔEꡤǕ娀앰¼´戀涒ť訁㐀\udcfcĤĝ웇頸4↩㐐﮹蠠㠌ä扄儖삧言㶨拠TÍ램堔㔞晁䂼\u000f頟꜎ꀥが⁯섋䄘쀸삤ㄊԁ㦝イ〰❀‰ꂚ頀ಮፅဃ렀ꐀᲸ8耑䀎쇀Ʃ쫔耨뜰喲挓䤰0괖੤㬝丘呈\udd84연ꀶ蝆ී䘓榜쥢뙉괶䄓ⴑ솀褱桲Ⰿ鿈ᝂ聂꜂鎶⢑䮥㈠沮弮Ⴊ뤪␘࣊䈄敖뀀ɱ訒誘˒꜀聞၀̈​萐߂ࠁȈ舀葁L⁅脊ँ\u0001嬐徚䘦艠賘て鮣\ud8d1殴몽ư챩㖘ⶖꬍ꒤̵윑飄ᆎ誒Β톘\udbdc፫Χᡀ腼ᆞʕ蜳禨렰\u001a劗츇鄦㬁ࣹ繒簵쫘貭铏퇸焸쫚爑㣇ჴ怸컈ᓉ팴焵집㉨罉쬔휧쟣⑄嵌䎌䌱Բ똆рϊ뒜艎㊴甈씳ᅩ⃄菌填䖁↝ࢢ⊿䵲둓ᩉ⟌ᄵ쒂౲㌂⎜⌮܃谱㏢℩茺젥䱈ூ㉲瀩門ȉ턑᲏䫛Ⓝ펌匜䮁쑘ㅁƤ켖๳少ᵉ퉲粵츳鲟ᘉ쐫쳺્͎り㴽Ṳ쫉磂∴찜䜠焉㧄쨌奾᧑恮묤죌塞ʂ쨑̫脠㄁耢堼ἋǾ脇肨삦ᢋȠꠟ΃੡䅐琀蓻਎瀼됊ଃ萉㉄셸殧胍⚍줠뼭෉ꐢҖ進倳뉾Ї堵ﱲ頄뒭歆퓠悡詮૸ꭾ큈됧姑畝㝝탵㴯䠉倪᭬꾠ᣄۖꠠ᪊Ӂ胄ೃ慔ꜭ䣢੃垄ቍ됃蠏稠᱆釄뼛㲑ꑁЌ슶礗궁쨈\udc02Б䁏덠莾퐁톁䓈邰쿌瞦௲뒴䨁ᄲ뼣숱䒱⸊\udb24술ꍙף辠6ꠃ췳렀롸\ude02ఀ퇈覥臶栟岋셊借℃ც睊ꭠ襐례仿㟂퐯㽒&ࠉ㢞㮼荧３ຜ஀ਈ‍숈ψ芦喙栃낂,⁅腨p苗귉栂낀횀㒈ሢĠ羁螟✅쮷쌏퐇婝箉麂㇞拌į稱耋ꏸꀉ记䨧ᯫ衾Ἄ㹼힮଼肞竢〶掱ɞ㋲ˢꇸ箏\udaf6ৃħᓩ㴰᮲븞\ude7b\udf58඘琳怐ῌ㡇㱥ᷝ⫵踀㛛\udd9c頗\ud820罦ꂃ믱่㯺ꂘじˌ레泫鲀姴⹙\udbc0霛֠߁ۮ耀䐛뤷㛣妻ꩣ격鱆坮顁ё悬ꦐȰ膖᫊頄㓵Ṁ⭻Н訾蚀效ὡ빐⢺遫ﾈ˰）饣㈇셨㔁᠂௄ଠᐲ艐吕Ĩ擆䀳┃ꠐဠ옺ᛃ잹밹蝸嘟泌䂶⸞픦怀!ኰᑉ耱㌻棺ᎂꞈЬ魞樆栅恗\udfd8䀇亭뀊Մ㤰뀒㇖訲㻛흸道聼䱉⤣㦤鳥荦兲㹦怭ሼ྘찱錸윟ጚ粒䜏Ǘ훺♭쌂蘎鿙ӿ森荨塡뚕㤦಼።ड臁ѐ꿮脣脴祿츺별郂煡䬸鲚峲䠀ᇂ。炂裱ᤣ匢蹮\uddd2몦䀋솸Š匀ꦺ❥齬晼⻉ꬩឬ逈\u0010䀋ཷ♹벎ᶣ橂䯉ꔼ뜊㏴磊ㆴ듇튫죊硳⻅ư耖滬ꈫ㝰Ⲁไᕇꢢ쪘\udbaa村▐䖖㑕諫㝱凙逃ࢶ쬒곕淂䓚닊顋ţⰶꞻ拀ยљ쑗⧑뒪鑌렅㈎崪蔟∇都恭䆹遘䯌ƙ♕욳魢ǌ蘠쁜୿뙯蹰똷쪘庒䥙齍柰ﭚ顭傋겕锰㜢썫0蠕懮ఈ퐷拎堫 鄇ᅕ虵휮\ud8a2꩑蚪냶뛥姵憯畍\udeb1࣌儢꬯椽斎䙗⋅奝勫땅镵床솺띎\udb3c囬죟뎦璯궧㾗䃇ﹺ樅⠳㜴鮰築悗킷粒\udbf3쭀⾹퐤坁ژ罢洼ꄕ쪁鈁쮑斑ስ喖ᔘń䃋⢈갞ꁷ뫊欢헀瓈駐壻蒉清鞌麥ᙫ北痮緝쿝䮿咮趇㥧쇏鹲⁀ꞎɨ泂렫稜莘愥\udb87㡢젣ಭ딲腨ð䁔朚෸Ɥ忛ݙ慣⺧吉ꄶ⟙䒚鍡Ꙍ䚨\ud8a7龍弱㓀蝌ﶁ⾅Δ㰌㲬\udcf3歅鯠a㔁ͮ剚궠ꚴ䋣㋚⋢᧶졬똥쫑ޫ婙⮰掆駘冗孷ร禈뀨ꇐ\udcc4括\"⃪⋶⢁뛜畀¦ᅤ枍阉ᐶ欙怀钁滙Ī楚\uddfdㆬ굥ꢳ陀﹝ꬩ樍ᦦ빣鰡啴蓕﴿埿蹮쏍甥㤊쫢⡭簐Ġ艚\udac8櫛蕦꺫絬ᣙ㨖๑쿽ࡰෘꮒ鯮왬筘涯闸籚ﶵ帻ཨ갵頴Ꙛ︜ﭰ篯ᇒ㍘蝎⩵䷅횃뎤웚ﵐ쎕㑛⹰ᩇ룥ΰꞾ靉짋蟙曯掻럏鋆ᬅ鶽댱鈮뀀悀ᘡ렢⬑搀戠헗⭝\udcc1闛慌쎽먮ໂ㧧祭㐕몰⻑묶﫭插\ud92f᷉\ud997앰龅\ud93a⏈꾄秓簗췂鷛灪ꓔ睽\ude3d䮂⧄◟쪗蕽㺻탺篚坊粟ꮂ츣葕揮嶬덮鋈\ud919朐ﻨ疞㷒籇໯俳싷⿂ꮹ膂黺㸏⹗暯浤嶆깅陓哝靓꭮ඝ뫗㷘\udf47纪魅贕阂샟匳ꪽ咭훺᫖\ud9ba\udb71ﶟ寎睓퓦黓멭ಇ왼藘뷌幼廐責쟭【Ű䆻莌룉쵼쒰\udcd9赕䇽匇챜\udc4d㥙ﰿ䖝⇋볿䯽⋓\uddb9\udb31拐ᇢ췹ߚ尌홝柍\udd70咂ﯞ\udd53嚃Ꟑ촘㐃頢곸ߤ燕㲀⮂䀹嶡䅤៞뒗쁘㗆붻躽읈瓫ᙅﵞ鵓ɬ痄낫匊‍媼葞䋋ະ鿈碙젬࠳뷤ퟴ귁㵻캥젥㰸㧝蟛苄₵㇀䉽\ud9c3仄䌳젼ᗕ겘㙔ꀸ贀ಱ欚㴬㘼盘苬㯽ꋍ莑캃凄簹얂珛\udcf3졃別\uddd2ⲭ쀽ᶤ⾁ଔ뇻二\udb94끛쳂\udbc2숻혣⷇봒ロ秗⌸Ↄ䐹ꌲ㱽눲粝ퟃ㨿쉌퀢䧇艂㕝韅䕱壃宕햢↣\udfce⍬⑜娮\udd72\udd83/⍜⮣䟞썺┌刣ꈃ숃ᡔ扃\uddc2쳒揸廽낍홴땁挶칌ⷆ쎺⾃혩슶㣢৔\udf63⟃﷏\udce3␫\ud995\u0010萆뀝嶌呐Ĥ䇩\ud9e3姈菣핢稵ꈇ쟢尸Ά⒃㸫\udd0e㼼य쌃쑣䯑巾㶭\udb4f脀ẄƸﮅ̫譔呕痑ゃ갻볶ⵢ뎙㳚㐓챼脢粎⊒蘪錊㈒㌀䔫᝝Ⓩϛ엢\ud9cbᏝ쁓᰸叱ぢ씸∼ⱝ䤰䉅ⴢ\udc3e屩⠣옾鎬쾀奒맋፽⮆疹⫂\ude2f鈲⒓യኧ왓䴱툱싒밤ᎍⰒ㏎剰셓訦ህ退끀蝘䗛蓜딾ꉵ㌓ሃ⡒茠扣⢽⸢叅쾣ꔤ폁Ⳓ绌봕⒣【䇓ⶹ䵎놛\udbd3ᨽ✒븨펃㪳挱友㋓밺㍅⚲쌨ꍫㆲ䀖ዋ὜曗촷䄒묩抚㞲ି봶ひ䬠ꈒ⾲윪㋷㉳蜢ᏭⱣ⸮狸塄鮝헽居࿛ᑄ匳樥ﷁ윳礳ﴏ㭳鈼銇㒲㸳쎁㾢﷌ꀣ⼢줲쾹﵄넍垴嗗㗢㿏卸␊ꔠ௷㛒ꂱ둠논匢㙅倣췐⎹⑓疨픱⣆贪⊰ﮑ讘\udbb8텏찹仢謉喟䬔뵇푋᪜\u0007干쬚贔喌杂䬰궜嘿劏㈲삭㴉⸲䯄誡ⰽ䈢㴨복꒵룔↱鑖놌ꍄ鮒⊩\udbb5꿎픢↌欐䑸랹〰䒇乄\udb83証왴ᮖ扤䮊ᒨ芔뜊⌴ફる瘺鎴ꆳ좤Āᔄ઱⮐햩솰꬈헌뤪ᝒ䑽哔ᐭ챛鳔⑋쮱䀪ᑉ䗐ಕ\udf3f̖⬊缣蕈᭰쓈㻅蕉쑜䠡\udc4bꓼ埅뱍䴂兀吔⑐ᰤ匄ꓼᲁ䠄搏⭊␶⫴릕ੜ欳؁⚧჎ଳⸯ鐭Ⓚᩝꪂᖤఝꔺ䉨積ေᥓ攷跼폥㨊璣蓧⠫뼰浪ཀྵ휆镀ࣙ瀂ℒء計℁䣩ꆜ髩긖釩麕㔁瘚앂ʘ怍壸ᚑ郙஑礀内౐┓ꣿљᦎ\ud840ᵡ\ud916党ᢁᘇꃒȡ㤕顺ၑ㐝逺埠ꘀ䅔餡蠃臨蕩꤃聦เ餟ꂱᙑꤘ耙Ѐ솖靐䀙ơჀፈﰘ聺Ā㠂ťᜐ∗肙鏜預䮤喭娵ꭚ疯娍꣚졁媰佅딑飵ɱഊ灍ᙱ촁炭ې똉駭ᇑ퀎⁙א䜖ꄽ0戝→\u001a∔ꁙมı瓗唱愵㦰\udb03넰ர툗\u0012෨喌髸ഠ昉\f฀ꈊàᖱ였쇎ມ瀐倌ء順慛෨㚓솈เ⍏肊崱嚵ァᔱ绊항廕ᵙ퐳㌂殟뒧励權䒤䦳䔔䊰ࠊ\ud840ዩ燎ၡ逆₢ᚁ鈖僀ँ㤓釩蠡㷄ዚ隷꫺\uda96ﯯ뇻龵滛כᎄÒנ帉Ņ떡鼎䄆ᴉ㐏쇙ᦀꀞ衺ṠЖ儖ມؚ腥ᤠఙ℅ᢀ夅ᶐ昝郢ঠ\uddb4꣨붨톧ᓐ턗᫑霎퀺䰻鴄ŝഅ簀⃣꠱刊ₒਡ뤝㫣଻」岫ᦍ粶戳㳀虓䄲춀퀒ꄠ稇恾ܐ玡遵ߐ猆\udfa8뗍ꚺꔋꕴ昆ؐ椆偭ذ欇䁸蕝ꭐᡩ寵ቱ贆烍ṱⴉ煭л硫퀢ᐱѣ큄爡我鬮贠툊⅒֐摳㬓ṻ涛\udf5cᧄ붱㬛뇙誻瀘壃ꐁ縉⤅٠뀙ꅹ言ꘆ†ၡ念膒ዺ푶耴猀䦚膈១蠗U፫멊堆汻↓º핃핞벘텅\u0002䐟粋ൔ颲낄婅涋\u0001꜆蚈撆졢螘આ桪酀೛ꮴ姟认蹿܈碇䡼蜨窇桤鬕멍\udda7잘柚ɽ蘃ꐧ莶쇂持뤊㪄瘺•ᄦ∝↹ᩇ挃⛸ų鮎戤䜃㔠ꙛࢧ䮻녰ᮐ쩢ꜘ俀듌ťנ쀅ᴚꈓꀐਡ遺෸ᎄ窦毰䀃嵫᷊䬏♯\udeb9녣˱笕㝐䕗却㞴낷뺱匒穊䓻頎ꃖ뺉ꤙꄺྑ뤝惠ᜁ瀊恅܉츉엟몀㩓ﮬ猬㕯삵杖획擖쵢姜矧¢᪐ꀅ৖ṡ嗀ⅾޠ惀იꘜ懨頚缁酨ၑ㤆憟֑郒Ꮱ縁遄Ơ契醚Ꮰ왵ࠡ类\udbfc涇ﶸ⚸琦Ⅱ퀢昖扢✃ड쑩⁙ᤡ퉾ㄲ眫∾봍嵅ⵗ΂ᵆᄖӻ絿홺့荴㟃父ꈚ㝣糆옞琛Ꝡ㚃搶썢㚣昶뒽痼੻웋瀗⭯\uda82玆莧蘛樖魦㭢稠戉⃢᎘ሁ⅙贡뭮䙑䏔ۈ痙彜꿌貇䦱।뮙阠戜阭댁㨅Y؀ሖ腛ء儆ѡ㸙‾针㑹ᆇ뉧잳ž쾶풍僵ﮆﴢ㯔퐫᪝胴໛鰏⮕⪍왗띂䑕番侪\u0013椶卭㘳欶獯㘋梷䶢쟮猹䆤伓礷卽㜳笷獿㜋柧㱼榙쭥蝽뀦㡰㮸氧ώơ恇ꎸ䙛緶ƹ⃢ᢡ뤉⁢ῷጒ㲍䛔꽘㒵ᨏ詭↘ኻ閜꜐√逢฀툙ਜ਼㤓ม洞΁퍨뙈䞼蹀኏輇溏핼ￎ⑊䖥癖ӥェ늀侳䁄ᤠ\udba1⁞麈ᢀఌ᫡혉孚긁꾔ᩚ옃긝箯竿꽾ၯ蛤摱だ㽕⽁ࡴ鸴룿ᥨ봔ƺ독瘟퇺ꀥ橂䙩嚦臨ኡ੦ົĠ倘ᯓꡦ጗儾뽁㄃쟀竛햧胭띛\udaa0ᣚВ濚긆鰉聿릁⾺切懺龥ﭓ嵗㕻坵罗൸흍榑쵸똌賨ᚫ盶ⳮ뛉髏♟燎Ꭹ㩓괻⨜꜕ऀ稛ᢗ蟯쥘ᆖ謀稊훌ጁ㰝Ƥ藠㠛酚ँඎEȁ츆\fᦀ裯ᴻ頃撐绦ㅜࠀ";
+            window.__GITBOOK_INITIAL_STATE__ = "㞂⁦ॠ上惎Ű㶬䀮净ค〱밃퀃➀뀎耜砎•胬(ڠ₀쫄ԕ毀ጺ偸逅늓\u001d舸ߑ傀➖ᣨ䄠Ѡ૆Ḅ ꄇ阎а猱镺괺킀䄖戜⤬ၫ㠓␹䜥㐀䘊Nᄀ昘聖碀ᘤ᰹␰쥈풀؊쪲꬛㬇䜀ℍ崀唀ᄨ\u000bЀ甶耱㰀⼀⵸耛咀夲聍7渀䤀䜩짽瘀റ欔㈼蠡﬈ࣝ%瘀欀㥸耉᠕컙늀༨碹\u0015޲【麊࣡腀隑᠛흆倀充蘈ꠒ寍愅聰W熂ᶊઐ䃠灓鲗䄃鉵䄐㌵諣٫祈鑚̅臁蒢䁙⊕ʤƄㆈ椑쓦獃ꏆ慫ᎊ鴕δ몽ư챩㆘ⶖ欍뛌䛤遢ᓨᢵ茕葳\ud89c⹥᪓䶥틹ﰈ䂰吮ᘫᨒ줴ꙛ∅쯥਑⢺᪮憪ࠛ瀀ࢦ〘ȁ々ꁎǐ䄀밠耆၀ᜈ‏萐ςࠄᄄĈ舀顀頔褈悂怌뱇䵧ᣡိ獥놯䤂⮺絁ꣂ洳騭囫咦읨྘ሠ行㣊鐺쁣밝燅䪙⁁멱鈏ୌ爂숸⠞Ꭰړ꙱䅄ꐋ羽㻩먛ꆎ㈘댐췀術↌샄匈迒瑓⌏템댏䋐蠷གྷ䌡䌳ِ\udcdf㜊鏡ഄԲ谐Ⳉ慜㄀༦팰䤔원㓣Ⳁ䑤⌔蒳ꅭ⎏Ӵț진ࡃෆ틌ᤘ钰쐷ᒂㅠ悔칳豸ᲅ㏄辽켤豛Ἓㅈ漸쳁졆掉藀㠏侅ヽↃꞬ㌿䔲찢Ḃ∸攒ƒ벎㧃烄ഏ䳂瀷ᓎ獼踷씰䃯⏫살ᨔ쀣秏젥匽쓓ᘊ씤ȳꔸ佈谍༰ఏ죄吞ԣ쑗‫耠鴮耑䃔趄⬠刽쁐₹ⲋꈸវ\u0001틸鄬誙䵐ب࠾礙̃鱏دȨ䪓墰㋮\ude0b䙂끒᠁誰᤽쨤摔ᰈ侮琷҃炀ꎅà怂࿊瑫䛕듭턟꼚䉎⛜眒괅해\udd77䏔潇텣堶螏歸爖⸰堵ԣ荞渌䒐袬ࢃ胠琲脂錠ᐄ脠࠺斁ᷡꎦ鈹ɶ豨聨톊턐㡆랆茳곂氀:爂抮꭪缾꺫㿗䣩蝟壀볒࿏뎜馼虄ك瑨ɠ̑֦P7ኽ균뫔辬劲ㆺ汳縅뵮\udb08㶰ّ聥➷⍻뻿롭ܨᦺᵀ㳆䜔ه䆀〆䒜Ꟃ龰渇糦爝猹﩯ꃶ〔璐搔ᭌ잗㫥皜휦\udd7e渷ᚔձ럱⩊쉤㷏럟坆ŧා㛲迣⁐䤾腀筞㟷诠ﲿ흡﫷穯໌䎀补࢏ꄧ髫絛顊\udbfa걣‫̓р搜ّ鐐뗐怂娂䠕ⱀ㜀棼龠芀ꤴ࢖䠿ᎌഃ焂ౣ⁔齀댫豬ᐼ荦〬샔咁䁲鮐ꁴ췃胯ଡ鴠┚ㆄᇀ嬁°⾃㣖ࢢ䭗ȁ\u0006ࠎ撬耀䐐̈耖䀆∈8䄀㲈ɤü⁅脱阢적\ud841\u000bࠞ懌ਰǈ耦̐夀⬈դÒ 課棳ᤢꬂ謬㍨ﳌ始㕠䱱鈡☔앂攘Ѱ暴vಆ̼⺅愸ᶅҀ젚ˡ㰯蛃䄑ⷈ溇ᅒ㙆⢕ả㑎近蘤얘쬓括䮌燎㗇룂쩙⬝跱覙㊦ῡ䁉귔좤퐃ゐ̒훰褭ʇ疮Ⳉ氎ଁ쀴ࡁࠎˀ堊栐萄䊐ᗂ骒ੂးࠍ怾췀А聵౅⇴⹇尤ᲃ偺Ӏ\ud817Ϡ舘䂈䈋臖ꄇƠ谨࿉刕안밂ǐ㞏㤘㳄怢́䴬ܠ저ߢ帀កʓ⑶颀̧㱤ंꋜ傽党Ⓞ\ud887練؁䅒ః⡞ྥ䒖᪙扎䞉\ude01Ő⩀ᨃ쁷髰撩鈢쵞⨛녀疢ꇆ亁ꡠᖂ鐰ྡᰣ੥㣀暲ꆓ᥆摣ᛂ롆ࡂ౒ూ赱쓿⒍㵾銨ꂑ㍖೶尲簷⡀벭Ē܉㊍瞁槾㔰晬쇣᩵斬㔆∸咃ტݲ由藗﨎哌ఫ㉐蚫❸ࡥࡪ᏶䠩齃쑄홸줫吺　飦ꊈऺⰀӞ٥첅钲噚찡쐧杈ྒྷ룷ℇ겍肒ၖ컘怼ⱅ䢾抢訅㓊ᳩ﹥ᴣ僽䭷胜爂딳⫛ꆖ幒㛈̐㹴섁歵螭】뒀曟㌖绨⮶\udbb8콀䶎뛁\ud827爮鶳빶肚虑聱煝躩蜲选뮷氆굟鍃䘃递淐략됾뎶䯮\udc6f꼀纡\uddfbݓ杌㶌∨瓍胹΁\ud984詴캹킻쌖桐ⴜ祂⎃ﻺ༃ᛡ㨰탡棍磏㐐⋖嫖ᶪ瑉㷡ইᡀ魌˱虑郰᭡衞\u0003槴졂⊰骎์⧁杹횹鳵ⶲ컉肛暬ᆘº阒冄漲Ǜ㮗补ᐧꀓ㏠쳦ᩳ瞬夈䁚孈䀍ᖙ\ud9e9廒魴嵭⸥肒霂垙੐쁿ㅌՎƀ췌⺙랈䱙쬰į오뷁곙⍋๪⸵ᙚ\ude5d䰝缐鈏㷧糙妨\udc36ψ澄臹♈做繓䶪΀젺튀ꭺ쌬縂⃩詠谹ు턡艺鰊菴䟀큖ሇ炁鈇ـ线๎뮂帰တႤ宧贀㼲誉䭀侀᭥촁࿜병ᰬ戨ะ娜蚺Ⳟ겸늨℺骐ಁ獮ힳ‴搠\n骜聿㊒駱伔”脝ࠃ¨ɢ䁠İ쿑㲧鶄3崏奂傩豛硁穎\ud958붭饯긬젋ƛ顆ᐿ嵩겖晁ꌞ\ude9a⾾憔䈏ꄈ⸞↖쳘鸩꾻뀫㜧萉ʽ눑ᲃ肘뾠鎮毮콄䗷㴓耈ᢅ炮Ѐ좆Ṣ瑾蒁蠼슠䠙胜᠈Ẋ㿪䔥愂ꋙࡹ批蓳엢ቦ璉㸀₄钄⁦渱⣸으吗髀၀ꀠफ़蠾४诪＀硯䷥뾦吐䍎蠃ꞻ漀힡䟤⋀Ԉ\udb13၍뛏ע෣ꙫ疳팤ㇶ彴巿뼻懺逘駑綸ž࿉କ暴滰폺들ᲂ괏㿚㎸濬컉욎劈ࢹ롍꒐ꢠ골Ɛ夏Ǯ삘峊詴࡜ᔂ둠ௌ䢴松䊋ꃢ䍰\udc05か࿈\ud81e頿䐸琄遥̐俄꫱ୌצּ催Ґ鑭ल\udfea悰췠뒃XӞဏア繲ठ螈誺ྠˁ꛺쌆ﮧ롞蘇\u0011ʁꭍ뚩誊럣腴섎뺭蜠阀顠悘洂怉胼줍愙ڀ䮫၉谅ミݘ캆䂺ϐ萏ƌក吰ࡠﲄ낏蝀꤉큭๰倀Ôೃހ\udf0d䐰ର밃큸༁퀨棼ᄐ䟦୾쒆纺༰ᢍՀᐎ룳࣠뵀\udaa0謀汧ꐸ懶䅗껑ꂎ顔ň직㑔ࢊ㽊确蔀Ⳟހ兠Ԫꋨ聼詠遲㵋䛥὆䎅챻《訩ઐ䤁䂕ࠬ嬗%첼Ⅴ迡킆蕸䮍첺ව珬Ⅼ쀠㈒磏ᒸ巫ꃹʠ邑䢺แ밋삀茉謘ᑶ痩ᛞ݁Ƞఀ鱥Ґ‡䁠༐ᐊ샤鋬ￇﱉ࢐覘邠⨝ꃣ㷨ᡲĀ怀ࣖ޾怃쒀Ნ䄂Ͱ댄짿ᔒ凢㔗儍ᓑⴕ⥗耚鈟忣﹝䉲耧晶ᝣ聗最㝧瘏擶㱦㈞쒉騠߾Ư锚Ľ萇惘蟠肻蜊꜀㫢ዉ欞幒ʊ㪝﹒誊\ud804瘾\udc0c槧楶흫盷棶콬駜۶〉펣ၓ䈠뢫䠚ઊ㜇䁐а㐌샄烧ව餂ސ琈Հ洅‪࠹ᐏ졓ɉ䠏ၭհﲆ̐㴆oʠ蘄끥Ð༐鰄郳༰銟짩藌Ъᆀ쁲먁䀰݀哆倠∦怏㠗ᝀ∃䉠Ή啡䃑ꘀ褐ﰦીᔌ˱ʐ谘辰ꈠㄇ耉ฅ垠逰अ䲒빔ਈ丄\udc43裀咂陛Ⓣ࡮幡஠￧븜쉸ჳ꼐华候ຘᤂ⚴쎔⻃뱱썹ꤊ累쌐넖ዛ쉌췎쐦࿏ꃩ者먱\u0005שᾥ⹈ꨁꢫ窝釙끋❸짹۰݀뇥䑗৐瀎ぐՀ⬎酪೨椀胸錐爁遗ـ䁥ʰ㇪࣊\u000e䃢硞؎ꘕຘՈㆍ젪췡稈Ԡ衠<螏〉般톇ă⎀篭쨭᧐\udc34▀漉\u0000糱嘡䥜蚧ἁ톇좜উ锝佬摖僨ꊁᒃ汶쵡⠒븾걈蘧ม\udd52䱲ᙀ䷊찃佬叇㫤켐굟ĥ叉䊓I彸꥓유卄땸┴\ud828䀚ހ㐇⁯Ơ爏ǥ娬镓魕⠝喑엕첍傘쵚픉軕阮ǵ㵕䡽城꿢沷⠔䋀計睑甥拞흌\ude33折爂喯栩砢贉再戔喂쌆퓖ྪㆃ嬀卅ꕈΥ⾯ꖆ夞♖攖啥㙚遶儅蹜廥鹐ⱄ칞ᯫ옃询沣淤◞怙쩽뼔ⴒ숾냖ⴓ\ude03㸠࠭௨괢\udcbe꯮飫ᮭ빟棾꺓⦧曔𧻓廫ﺗ᪞礇ᤎ\udffe⿤Ƨ㋞Ƞ餃䊎ꮶ\ud889ǐ፺뀟Ũࢁ䤌膨ᎀ膠⠢砚簊Þ먈䙻蕡䜙䛫䌺恦퍠㠛ॆ쏥㷢䅤ᅁ吓䆺݁ఔ쇓찦뒮솜᷁밒恟殠䈒℥昡ሔ뙬죱䂟⇞ࢡ纥⇽⚡枡ꅚᎡ႘狔桡ࠌ慟䥨ၖ፡瘗耎᣼Ḗڮ᪐ᯡ᭠ᅁሀ㄁\ud8e9蘀吏灓ࡀ⬁䁒ހᶂミං꤃䐈̀갎灓݄-Q혍琲᩾ᛙ凲铌蹖Ơ⬂ᘫʰ괟텐Ǒ텸ϑ䠇퇷ឃ쌟⃩蘱጑帷計댛ꀋᒀ䬒넷轞枦쳵仫놅ڎ鮍ዩ偝ꜞ熗ᵱ蓛燷ᴡ休㴶۱室᎜\udf1b⺘⏾ᵠ쮅໾蒀႞鵌酝낈顣ꢞ褄উꀔ鐝놯ﰙ͂ɩ㲬&℮┗ᣠᤊ삮㴚䤈挣\udac9䛂⧷ԍ즼铉棜⦢鷠洎⦇鳩軗蚥ṑ雘챐ಃ꠾菺ঃ뵇븧険ۓ\ud89d䷠垓礏콹雷˹澑擄׹踃怒߹砀ՠ挜⁒⁠壁遝֌ᬅᶀ蕇钅⡖覨㮠ᡜ雄⎅喧藸⫩䑜챨际十䕔卅瑗䀌垉䤌않ꛅ度앴ꢐ鴢ዷ죠ﱖ氥攊┯鸥⁣傇捞萂盱㑆ࣔ䀂ې꤇䁓ːﲂꃮຒ先\ude58䅰ఎ﹑傁孖⦦ꢒ䛫郘⯠砄늎◯\ud9be渀㺪㖱\udea8ム井귃쫚\udeb6ĭ鷭\ude0e謭돯㺌룞첾㹼褾먁괌밭跧굡m糔涰扭쒍洩㼃犞縮铭잗混㛭鉑鿡롾㪺麎ᴠμ쁞ǡ휀候蛑킁䠒(ᚁ᠑遘ᠢ鴄ὠ䐝Ұ㸕ᎀ됟䇤쒐ᓇ䀸ى迂♜Ṱ㰜⩼ᯝ舒頃톸㴬鴘袡풺ǫ㦱쎪ኲᶡ爋ꄫ큡䘞頦ሀᚆ愠š믑邶ὡ踜紮ᙅ栏䄗\udc1b 쨯ሀ脟Ą麘༌䀸཰䤘༠င끛ʰ䀣Ȱ뀰Ð䝑䀴䒰倾Eᜃ攒縈㣌갃聃ࡠᤆ䁃༐怅몆ࠈ洛莃ኾ箄䌤〱쯎䎣ὑ퐵ㅟ蝃幟ㆨ鲱ᩚ쏫ᇃ뜓녬쯃ܐ⏇ᡝ∵熞눀ϱЊꏪ㸽騵螠鋂᭦竺㔉蘰持됛昴써駃阹⇖㷠쇎쵌갇㹮䅱䉢뫄骪얯ꃍ좁攎팁㈪䄾즡㮌쥼钓턼Ꮁ㈀⥪隫䪼鲈㵻랿箏볻圊קּ闭骒歺묙窝鍞䚕ゟ㷳뼰넀됋₶ପݩ傿涚犓욾ﺦ봭磦꺾鹞ﺛ‎\udb56น衿幑錙︉適禑׳㼷簋ꂾொ偙䖘骊斑奕鍙疐\ud94d阀ⶖ\ud91d闙㶗\ud903鐹⎖㤓锹㎗㥐䢹쮚맫馹\udb9b맻颓Ծ䝧鉓鞝禷镓辟ꃏ髹撐퍍㋓洱퍀巓봱Ր弐ざ㾸ꌿ凣㚅匹薳㑹롒\udc04咳盪돤奅恥덷鎳댇㫅걜玜噳㱙珗㠥眰儥┲央丏◨텬ꖾ蓥䁻勌刋ꖰ䩍᧫Љ쉜ᓀ鰢稺᠜婓쫀#඼୲頢৙ﴄ䢎৙洊삔섣腞㪐梑选셀鑤逿铜ҘƐ踇᫱ɚ清嵈뺀Ŕ\udb90⅛ꃄڏ慒츛壠孞磒ˮ呪食꺈쮄偃笧遵჌볏嫒Ѭ⁯཯ﾧ嫑圕飚喉岕흐峵奔햿囕、햏坕ｕ啚荖ഉ讀⻌姪툅㖳까䮯㗅嬕㭛₫垀躄঵\udb5cꝻ冠萉쁭ะ烟Ɛ᝕岀堋൝锿動䇲ἁ뇰倀턐᧚Ḱꃞനƾ탒|൒請閶ɬ鮦䂩徐プ㽔ક輓鱼⪅ץ\ude09赎蕒跙壟プ蓛⸱臖規캸ವ벭컊쁬䥞觲ꋯ틸퇾⤬֯⵭橧䦖㯷ᚇ祼ǋᥫ洎娼댕ꢵ寊괩퐁벵⢏哗촫㉚쫀咦핕ꊭ콫⤝㢪\ud926㛡뼝欄⡫杨ﭒꋺ뇿ⴂ\udd2f䂒觻坬ᚰ縰ᓜꍫ䐻\udac6ʩ喎뎭嵤鵷婡슺벶캟棏䞝䄘鱈멅윐瞬ꄫ烷逶䎷패淃惁⣙䛌鹴õ鏰쨈魤\ud8d8Ƞꦰႈǻꨡ泛⡌窣偐銅찕❙\ude7aᖴ庵涗ꝸ嗫훑뛍놌᭭鰩\udb03\ud9c2넃⠿泊࠻⯪軜癷턉㩡᠈舰ʀ踄簏悦ව墻ဆ耙Řࢀ逌㌰Ḡ㡆㶌ඊⲜ洹呒窆Ϟ㴄䲠⼫舶\uddf6砲ﶷ䓂毻࿛ﻄ抔㈃Ꞹ䃦မ讁움遱憨䃘憱丛汅矘뼌죪蝡ᦤᑆ顳顝씆⃠뱝㋑踜ꍿ訂凁娵⎚問⥇㡉Ṉ운爝訤ᣡ挌ᖎ쎳ꂭꦎ栂㕐✆„냬⻱희㍌胞䚘話蒠䲅茧䝉蓎\u0011㒄揵隫࢈荗䄦빱뜝䌐摠⚅鐅ꅠͨ匥੩㜋즔왮锱ଵ䰖▻빞銟雼꿤᥎퍀⥴\udc0a\udb77\udd06恷砩᷉♣㝯᧝밍㌬⭮轼흷슷脈꽷刪㷓暴啻껌颦倖⤜쓦屗㦯ᒮ歅ᮙॄ䪔쑹頼幩ཋ鍃셊䩑䲢㵠貏呺摪吹㘽度偔腤ژᔆ\ude17趪쪨頁剛톱삸鱬伆礳\udf8c鏄您䡨껁権Ş‍럴攌㮏왅傂ጠ趤쀂ⵥᑘ⯍蓒茠헭怠鍞\udaf3䞞봉o䈁ᯌ놦鋉∌찫砾ᦘ臇랣봒೯⢨앗䀞艕⺢锪꥞鐾⠗澯簾ꗵ亩蟀縑Õ簄㕘䄾䐢侔臭赊⦠煃訙늝珯鼐뤗틾ꗴ‬쇹ʐᰁⰋõꍽ溤崙䩱鷱鱰綾껵溨⸰ᨣ莀⟩ാ兵孾烗옢㖗㗻㱓繈組℃ﯔᣲ늇ﰖꬕ呫ⵖﺸ䳆ꂰΎꁶő脰춶ᜇ戓׿൲‍焓␦鸴콉푞桗貖ꀅᖎ듹椀홛䀪娽㰃륨㹌߲픁슰䁨銐ᄫᰇ넧뱄ૄ䤃퉬삪ߛ妁ﹶµ붒ധ駀⹬ଵ뾴持Փ⚤ខᇐ疠苣ꂝ㝘ꝅ栾댕钂裋⃕萨Ⓔ吐違畴Ơ﫩蛑먑돐缙猸膢䮺⦱艬ᠽ㬄렸䑒㈣鎃譤ጽ편₁쒄궒⟠㛓稭똈廴뭤紈藶쁶帒ᶈ갑㱋ꘇꁛаӐ栆偎̰ᅤ\udf06섺Ɛഀ倜怕Ⳁ쀃䐘襔㓶锖쑣ㆷ蓻⨁및T׀ᨉ⭊䍏\ud810쟶ᴌᢀᴆḱ憆걌๳႘䌜ꃪ聩蛁\udd12쌴ʇℙ鱝愘甮雃⑫낙ᠾá틦쎒走딛鰸ኗ৑褣渝ड़॑퇡ꢫ슬戢ᰂ텈㫤镔崀弡ⵖ0鈊椁☑燴௙を뀒三䦄䡌✄䐩쨦⢎♚⋅↧医魙䦗뗐೒龯㓅ꓠᥩ䤱⑱䳉ᥫ੅\ude4a釳瑛뵌ᤘ팦䚴양᭷摨ᗬ掷Ƙ蠈晼豂觜蔙㌑䑝\udb0a坷馍\udda5᝷戨㷝晏玌盍锟덕䘜\udbee᪋ﮅ쳸ꮨꁸᨬ䫆躰㒔쵫╳䛃틑⩗㲉왯౻평톾㉀₨ﰺࠁ准삷쀗㲠ꛨ闒ѧ鉁찦硰䴙쉠级䢿ꍅ拠頸됪ꘒ멁岎솄鸖纴䖟铥쨥⯅뚪㪽쬐弢﫻◴﫴倝掐䃘鯙놖뭣淪䕄荶⑀붋윿掼࠸轸踻\udee3跷蟣缙엎⿱뵒ᾒ飹쟔檉艠㮎奢䫓\udcfe姶㱜Ö꼁ે៙檗蠤ഀꐎ쀘苰ᇱ坖米絟ᢼ뛸뵃븫출揔垞ἀ✃䱾쁈䰄㒧駻㋁绐乖Ⱃ鯏Ӹ९츅㯱䉭肴ຄ愢兩但ꄓ놬䊛﬑⨰ㆅ馹䢊㗅뿔ဉ蛃飼嚦䠄살ॠই馬肍ӄ쵒-觼튯؂速쬾♋嘁뷦ቦ떄巄૆\ud86a횟ᒒᖮñ妼ᬁ劷鉖鎽䔦ᾊ榪䣕贂䃝嬧ᆁ멉ㅋˌ庘瘆歓腋ꃈ㢔ⲗ歈ᇖ䈏躋괓겝ཚ靂䅎仰๴搘鴷╜允︮偾ּ鄌郘㝛ኁ䯐䡉醗䀲⣄ᓁ\uddd1ꡟ琳歠䧕늞늄\udc17鐏٥⯁㖵泲逐귫顇稡࿞ꇴ鰢絲꓄㊩焉ꩢ䊍蒑⠂瀂©ˀ̀쨏〶莠\ude04쐂䠀쀬ꃐ▀㐋Ü曠㣓恩㒆未설钓騌®໹㣑뻇ڝཚ佃㚟킊ᥐ콩됳ᡡ팘泃根鴽蘗仡ꋂ綌蜕藝㴎戵౞鿴랥죃໺䧃炍ᢂ䠙፱ٵ᷁鈀弧\udc3c왌獸嘤䀎섆ቋ쟐宅粘ǯꕺߡ鑄鏓ㄤ戀䲙ᔑ\udee7葢∩鞂੗ꈶ饉㚔髊접닖Ŭꝥꤩ║鹹劚꛼졼赌뜑暭\ud991ﾓ摰ᐹጬ깇ਣ〔犳傪겐ʊ㋮䤴鑢쳕河ሩ곃曏瑔紕\udee2ꢵ䑛㟮\udc56뙎ꈄꭳ筥ᨹ촴岔ⴟ༫䚩䛑㻊걃ꌱ\ud821峒鉻웅䩡쉌⧐厤篂崈膒ހ⒀枙㥡誙攼ꫂ✷℟颒㠁ꊾ飨Ӝ漘頮钩ܤ긤ꤜଊ✱깡戛鉘毕륚稼㮓墮ⓞ緊汅뵛ᐼ魺瘬祎ㄝ먍㲐ˏ㡱ෳᱍ哿鿯俇矛賞岁⏭\ud85d帾袤㹲簓Ɓ䨨肇貾狔伛粆항䋱ﭓ砷롆ྠځ됃念覺럲쟿㩱௿ᖼ쀤䂦㻐⪆갋柩҄椯줅꯱䅢⠐钄\uddfb쁟縸⨿ꘓ俠䋋む䑏뾅ୈ镆枈턢选脊钀ጀ\n䅲쀇尫卨נ⹎䈀ɒ蔬䨀渂䀘胙ᚈ붼ஐ鏻쌢픕좢䧪홑堃굵៫堁򚜕訌啢딦櫊얚䭶꺥ⱑ䂣審⭉瘩㢓㈻꜐᜗㫖丐侊쐟❱㧉맕ढ़폂凤郙礡ᘾ䮣鱋ﲐ鋝ר⫴넖ꘈ′夔겗ꛘ䊹⥊䅋銜勒\uda94ꝅ爂쩷色鵒跪顈ℍ⸪塃䪚튨葕㋺㊃䮣䑬⤀ࠇ䋘ᛁ黅いᅈᮀﴄ䂸辠ↂ瀄怙ʘ㋊樚錋\udbac묒碑耆↑锠◑’뀫䯽븍뽬犃镭⁡颾튮僃䦅\udca9೧䫘䈜薥䷉Ἤ\ud844豶᯲퇛봾䚟丸帜︧嘃⁆㜊ㆽ쉨霵Ⓠ燺㌝㉁䪸찌괶벻ᱨ䫝悳㬍쫞㊽ኩﾏ蝂㲕哌ꕩ㎩呹改튦饣睓䤈Ꚙ\udd6e뛵꺀ﵭ䠠\udb89ᄷ湥ꚳ瀖炪뜱枭쩕孵镮\udde5塷╧ⅅ姨坖碢﨤温䒀ّ立鑁눕ᱬ鍖鬬헬債嚢ǫ泛埜탑ꃰ畄㱝锏䜀쏜恰Ƚ\udd5f큛䞷㩀躈튯롹ᣑ奩Èᾢ堫뱸⣀ี죍딀駿記퓥䲢鈌᏾㭍ᾪ┚⨖꜂⴮殪셌籈艥귲蠹⭘꽪퓆ᆹ分湯妜졟䛖殼\udead갷轲㭟\udcee혍략ᶋ란ᐺ靺躼略咝氙羞헎땹㷲窨ષ鲸ꇫ꺠鍊訾爲屳㋾➮ஜ篏቟綫怔⣜ĘවὝ甦첽澭鵠૗鰂샻痃磼ꁙ㼠㘧ᘍ࠯͊ﰛ캿ᠴ悥뱘⭂创ூ蚜☐뙀썌린\udde0㈦ሏൄ桌₥ꐀ顮ΰ΅ᑩ強맿蟀놫䗤럣墚碖㸱ឲ잍岶酻ᨄ\ude24셚⢽ưᴀ혃ⓚ웩㘐┝⁙奈嵀둅\uda06伱喜퓖朢൩꣉ᰉ㉟䷴혝㸅뢣씶仱嶒ﱐ؄ꐀ섫쀫鍬\udc5d┅茺╎涉奵됐ᒏ㕆퇀ᶇឈ夳儔霆堥鰱䫍鹊ኚᛉ㉂ⲑ⥹淊啛䪗㳾ࠪ剛Ⱘ튒꒴랶᥯楖宇掖␺㒬ؒ鋁옅뀌腈ᾠ搃逡肒Ð嘀栛肆Ѽڀ\uda05耖芤เ⬂᠆䃠૖동ꓑ饁⮐ᗄ倈肬෠쑱㥨\udbbaᜧ庅郊浃ছ旋ݣꕌ⥭༩孂싖ퟃᮥ벾䇛橺滚ḯ뚆᯼냡塱㭯팈鈸䊺㖻䰪咽ꤕἈꠜ㉋衳煻䚇⢔ၵ⧯몮箺㽀꒮탔㭔牧쎲馪睓눺饘野땰攣鹂耺䜲㱇熺鹀鷓瀕峝䧜Ⲗઋ㦦ክ摧䶥崬쪧鄊꿤儕镑㍦瓌썙骪홇㪹튳Ṵ᪨\ud94a蠗柝픒⻿룛⛕戴靃뉥\udcecꥂ묡崮꥗宪붑稧뭝뀅懋좐䟋뜄쁙ڍ召帼ǆ踙悽몓雐ᶛ똊飥ĥ즃䕤职\ud824糶贸䢅㝼ẛު릡硻芣媦╜㷩講犽叚令Ꞹ\ude68賭约嬙黫筧둹໴ᵼ蓻ᛯሔ亩ꢜ徽庫㻪끾쮮\ude6a횸跕赙뷛규噁窮⼾Ɜ㱣樯噟繃惬ⱠϢ柢庉㩵齂婢出엵穹綣怚삙뻃쨉㯮䅾𢡄墄諍솸皨䱃娤绌著꫾ꐭ뾹૥숀⨗푟ബ⡰ㄚ죝\u001dꂠઍ㑮è텄홓긎/埽忧艞刱꘰ﰫ⼐ܸ鈁ꕪ趐ᰒ理뢗ǈԉꥅ≉兊ݤ馢섗ᭊⷌஓ嘆ᓜ抬༩ꆁꐜꔿ㡤뀋偩饤劸霫㖫歃㞸룍帩ၯ评ᅦ픕妤◹힐嶚и덁㠗襈ꤛ䤌윞ૢ甈벆計ꆩ桺Ⅿ棆虒鎡는䐆ⴆ᷊䉛懶\uda84㦥㶴衴䍢ᶖ㡶節菧뺀鈍耠ក洁렄 ୂ戃뀁ßȨ剄栍菨ᢀ倃栜䙀ࡑᖔ鑍ᷞۺॱ鏅耺सꡠשּׂ婧䓆\udf91鲏洺洴㚘饆躛狓ꕔ癡꣒ᰶ\udc85됸㴳䯛堫盅ᤎᓭѷ棥\udac8꨸豮ሢṸ吳ᅓಉ狯ᴐ쀗㱶渧㴇֗鋭솼詡醓耊捬撶沖蝧◤䎎튦ꭈ纋饟傦\ud940ᓋ譈닌䂬뷊ﱶ䴢䕟䢏辊뱙銭㨁㭎ꁏ편䐦씗㍶睪ꔦ몯홢♞옪஼\ud9c2ꖫ딘༉璃짦鉗쓙ᣍᑉ몳\ud9de좤\udea6ꐅ䧧䟁囨䀥⠝跣稈鉸ֈ銨匃넧┹粛쀑莩菓ۘ霄섞니┙쒣髗䛆\udaac峰芔벳ᥜ諔ꩠ녪鲏浪쬛ẝ䰧뗫䬦佷犍㷮ፏ鯌퍭语乻괷黛䵏㻓㟳鹉筟嫩耖綾瞧룽≪솟鴸闄긙ꯤ\udf3b厭ꏯ䏳衶hᎠⴆ꬘謹餾곏侭펂\udeaf矪韔ൢ칀뒳폱ͥ曀\udb36࠵ֺ㖃燺嬱蒳⎳桮杻㥂๰责鴣䴁砃䐛臎搐캄峲\udab9믃깫쪼⫝̸є洽켠想㳌ʠ㔢돌ꁾ̊⭀䢛〗禩㘾晍堙糿ぁꔶ榥䴆끮씇綥䇻ᓐ泉٬惔ᝬ騠ﬥꝃ莖樉璂砳暔⿰爥舜꺰蟮햅넏릿ୱ꫾蹑콒ⱘ⨩䨙쥬協㔡甌耈ꗱ䬥暨ᚦ⳸ッ毕拠䎷ꙡ钵煬꧖ᯢ\udd86Ҷ㬡⽞崰詚䢋䁮ŀࢠ肝솸☌尹肌ᯃ瀅橬쇢㪲늲竫놈━ᩬ〽쭙摭崌↸\uda6c됱⊎ꌮ弘叚亚넙藁쮆꭭䜶\udef2사婊塖ŝ토啅琕䥍諵숨잵\uddac挩幻䘤壢≎⧇ᱞ愢ﺜ䇣责ᦒ銐遥㍱쇘睕潣畚䑂㪚뜓౅팫乭姄爏偱䁴ῌ༝輜᫹≞㉎톭鎬唔唺敗㖹搫ㅕꂞ嫸⟎홵檶궔纫඗떷렝甓㫨묱㞨䮪ᗜ꺹銫겓ꊵ폪鵶섑䆑급ⷐ㘺◕䙜䄸琗枆䌚掀ᢂ㧓얥ࡉꢭ㰘\ud8d1䫢꤄ꌋ낍諣㝠替숁⊦া๼씅䯰䖉\u0014穣\udaae延卷❉↧箞麦浧ꑹ嶉듰㩳硫驞䕻\udd30몍染퇴潤뚷Ὤⲃ곑ȇꢾ䑧ᖷ粸츐ሇ堄〔삮ી嵯쁃㌯ꪟ缷駊梳䁈ͺ頋㡕᭭倛緶\udddf尓ꃗ妗濁릳蟵泲ᬽ녿攻徻᩾\udef8聦劉䋄Ͼ臚ᐃણ뻌ꥀㄯ﵌栀\uda76㢓ǩ⑱냳沵컉뾹蠅辒ᣥ삛쮾臊泣ᵫ⁞ߔ鋝현遧䤿魕鿦䀮\udd9d㘇位ꇓ˃ڬ錝昌셬췬῀꜇렻솉돉㺱襜鎠ꗬ逸 Ǎ䛷甠᛫ӯ敃푝ૡㆣ飁齡竺Ჾ쬗隻榥䭯ᘺ必罺訐ň뱀娌䀪애찅頾䏺๰ځ퀝耋⡨ࢁ咺鮸ḙ磇賆榆澠ࢋꆁ밞뒘㯨湆灿斉뚜뀎萾狨᳦\ude51郹淞媺竛桿蔆⠫괜䩣荘痑꾦䕷ꌱ堘헚ㆁẌ懭숾虘軷䇘ᰃ伕꛳焓⥁纃貪惆麔偑账䀢䄎휆人㌦絖铤熧\udc9c斫꣪그킟ꚸ猩老띍뿪ꛫ握꽒⡙ꊨ髳辦릷㜝毲췤垏䖪ꖝ妐亶눓牢ᪿ鶑㬶埝躹ꢌ佚븧皮靵횝囬ꕴ笺퇙㥺틏\udebb詴膔◆ए싍鎌쓧룍厥㼙刈펤픸࠺࢕奋荅ᩉ仕䞔ㅧ鑣ஆ验調릏᧕殉늯剭橮黎쫏榶뎮푬嬽콄흩ﶜ㩸뵎鴯䆷䅹廰幺煱招\ude7a吙瓉¤벷轙᧓쐬ﳵ﷫⾔傒ː澁䀀멽纶崼볣泾ⅽ邿㛴⹀錂⋩ᝈ텅퐚㟮讆캻笗㾞⽰鷭谴邡꽤⫃彦῔䡚᜿뷶輒旊癙玹蟌杤垅\udae5２⑛웒ꋳ࠙⻵풾श䫂미મ풮瀵浹㔘뺻ᾜ滗硁蕞\ud8bd圎⡈ԥ뮷ꮧ孁瓍ϙ뀼ᝀ㢅뇯軽쥨庵옵ꂜⷡ栩℠졙ᖑ韦蔍潢讞몢ﶂ梻ⱅ띃豘ꥈ濢혛똬䛼쎩沰켗㋕哻྿砢娉ꀐ࡚Āᮂ㠟搐hᗁᨣဳ䎰ڀ꤀ဆ₮ࣸ咁氉⽺庁蓓⭰菶꾌෠⛁ဒ탈ꊰ䌂腧⏘㣚䝯狢賶깝⇥䛖ⵑ㲾ꎇ᎐䁗❸쏯烼ꟗ蝫懂戊烥睱孝쉖㝴闛忂ꗡ楝\uddf1陖㜌蘃듅Ꝥ위缣ෘ觏葎侵ٖ蚪늧⟟靽줲퓠揆埓㶟蠴㽹ﻥŽ壨꘶㿥䐟֛䣷踲⯣卙῾㢇輜ꇤ፨紻ꪫ핕উ䓂獫㛦\udac2⛂瑪袜緄轨馉씟캽觋긻㙝ҟ靚优赶뵭辰䞷퓾펓瑚࠲됢Īꦯ怯✔诜佭ŝޭ鮆䲒䑀마뢓燪稑㴱伂飢▻㓼ꦝ㺪橧车꟫匙쫅ⳤ쾵轭熧홸㲫㿶궛뙸됸ꜽ᳢座㡥腦幸뙾祋怗軰區竇䄨幸⍷껳둞ᛢ琌쀱o¬Հ㉞䂻\udd42஺幽ꗎ羨陫வ뛰⥖沋赦仛ꂠ讥庸⫢脮㻙㗧缭墳鬰ප๰撸䴃⢷࢘рᑋ乮䈶፵꺀󶊎⮠\ude37饧昭І㲺狇쮦瘂뢫䴷꒒덹靠랜鈏鬭ꑾ튺랾۞薊쪹遼랿냆ཽከ貓큩撀苺뢙꫁鰖䏘Ⅲ㶋鋣\uda17䪅银꠩薝껢ᠺ؄酤鬦䩩끺껶\udeb8냮ྸ媧\udba5␛뙒떱ᡣ劉蚈洛閆놺\ud86d咠雁Ⴠීꀞ쐁封\ud802Cô෰ව罀‛䄭䀑܀⼀Ⰴ笳㸧뀙歐迮\ude02뀇*䁯Þ얹⓰焓㛨犝隺〔椶뢾\uddb8谠璼\uda15ᨭꜯ鞖吸省璲빛栰錎洙毩톱\uda1c㤮醾밸὏쎌⒂㥮ӆꈹ붢∰Ⱗ筱셉㻐۫匀즮Ş䴧뿰쉢啭✞軏맃꛻ꍖ윛蟫⚸솿셌ጰ䍮\udb92鐀䴧㈃妁ꔢ⍙䇮㖦繫炸舞닋爬螰☌蚪ᗸ浫螵绸竳ꡇ눦쑹ண繖ꦷ긦둹쮧疯纏失꬞碌剨厭〦Ș⬑าꐊርこ솠袘垡⿭礈벼遺캘㭰熢瓭汏쀦⩻ꗄ딱ﰙﻈ끟闾ⓘ橧媋狷虜굘ꦞ⿻퍦ﾏ樟荒渼ꓲ뿸㧭춡캏꧳汀埢ẘ峡oꛢ\udaf9각ᠥ㐛鐄錠᎟㡞톚䗯粮퓻儠ீዀ倁鐈̾į謂顡龫쾧\udf36帔ٛ敀瀚㐅\udb6c垽Ũ묻慗꘮\ud829嗦\ud9ad庝騒뜁ﻛ푇蚥ኄ欫ໂ꜊톀칤ʩ\udbf5묮⨄쬎瘂䩨ំ뚁怚嶾至藍蚊䭻鸄漣⅑ﮐ⭝ꛞ㘇쫧恷љ욫耖ᷘ똋⡚䁧筸ᅷ齶끛馠ၝ\ude41ݙꣷ顁嚸ꠣ殛\uded8妹ꮅꉊ冱㠇ᨃҴꏽꀾ\ud929ꐕ㸾뤟毯꩒\ude02۩湱樔፽鵊궳□\udb14湩殔ᚏꝊ픆␭䔽㱠ƐҰ㧀坡⑁䀧䃺ȴᨑ蔀ⴁ퀄鄖쀴䁀࿉鴀횑阾ʰ҈ᘺ珣谁Ԣ頻ꇠ긎⍪㥡⾦셽릹泓Ⲿᐺ㲭䎑솷䤴橰䷄컧났谟䡅枯駚紘̯灰㉏ݏ攐斾꥚䱮閙䰆ऀ辉ᎀ鴠匋ᬰ㙢燨Ⱖᝈ椁汯管㊏몇躎⇻匯ꎃ⫇葘ᢃȀꉆ퓉ﴂ쑒䘧ꄺ糊뱠纟ᢒᜇ钲㴰펠徵⅋嫒៣髖髊㈓결仜묡跺爙沩홢柈綪ʇ矤⡱☙㪒毮ڀ䰲΅㐨䢾ʠـ㑃鏣퀔胑ꦐݏ۠蠁㏎쀏᡽芰ࢀ鰉醥냉聐ـ㇨堁而怛䂴䘘ࡘ䴀ⰍẴ볙襩鶡㺠옋〓೟îਮᤶ얋梿冷ዮ㟨尡射\udf21糁⌒䈒᠀꽡䠆䀙鹅¨\b虀軲⁏츳제䡡䐄耒䁐똵ꨭꐁㆄ٥몀帴⎖䘧诎૙䙤궢젪\udb66ᙟⴑ㞐퀹샅蜾ꡀ奡飇蘙鞕憸앂鹞ᯫ신\ud862ﱴفꭙꭡ䰇쁀㸴惙왿Фᮀ⤄耠ꡃᏑ芵Ჱࡪ瘚쁂恤hೌ㜈⊑꬝픻౨و㬰웆쀂蚽哕拑蓨뭦쁍梅탡ꣾ괊洂䎀頃䂩茡䲿ᤒ풲醦䒽૛懎挈¸ဪ퀋硬⭲䬱ྨ촃❯⁌ۮ掸墒⍻熫쮚窨ኀ麁쉨᠓⒑臷飊졸䫞귪硫ꑵ\ud85eᶷꭶ뭺ꦠ걎מዠ溚❻櫡ī諧穸껸冮菘髬㶗ڣ\udb9a擶Eࡡ薈蛯突᧷Ꞛ視ᅠ鬫껤堡ᦛ࠾쟘뉀綪ᇾ릥⤖鹁녨ᐝ綼㺷\udbd4꽽鄑ᘛ煦튋٣ဈꄑ\udec3耿䂱설䡠ୀ鴀蠎쀍ႀ쓞⤹⼀䠃찀퀡胧ƹ䅛飁➆㝁ꀡ遉˵Ꙑᔀ繈끚틋۴䃥脎쁲춭⾂\uda1e姬᥃ꗒ諺벧䎮酪列ᆯ댎뎻ᤞᖠ⪋믫䜶\uda32껨ٮ鯁固㤓澥갂想쏣⭠ꤩ鐁䤳뀪磇ࣣえ붒掠凪㠾聾\uda38튣ጇ蝗沈崀倧调ɛ铰☠鈇鉾뢅Ꭿ衤ứסּ矆鋉ﱠ呻躔虸ꂢ⭙锟䡛㨸祕ជ赑ѹ≯떃兇奲ṇ輡럨鎧纯ㄐƠᴀ㲑倀耼䀍ˌհᦔ褂㸋쐔E쉂졙㐬\udf62ḗଵ퇸\udaddᡍ鐸モꚎ눛쓒☒옖ㄬ뎅닡䬛ご돀¡ڀ環䷩쮶盜뢮ᜀ뙱஄渗鱖얧ᑜ绡頟⬌冕웊鵱ݻ\ud813硱ڇ篞ᆫ蠀ᜐ䥉熯蛷዁뽶氘㦢愈懷ꁒ耡ᚋ᰾⓷㋁ᦽ뮮鑙씦葞汤\u0016췠ੀჸ뱖ᇹՔꮄ燱ᔮ籲㺗쓄ऐ뗱᣺㡣脧WS೐泀琁䀎錐̀⬃▋䀘舕඲頉\ud81b꓋ꀕRņ쎔\t퐔艭陹᢬ᚂ竁ᠦ鑢䎶ঃ믋䣮䫸꾆슥틫괉쮸゜澓দ鹯邎㤑ࠟ৐़㍰齫䤉瀇뫢䭌ⱪ╘霌羺蔓▣诮순ꉴ冪⑀鷠㘩뢧ᐯ、⧦䨘統陱⫯ꤒ摨Ƅ鄒呉ㄥ쒙肉❽ќវ椤流橳燦ꚷṍꭨ纒㨈ᤔ岡鋅씡⑤脁◈\udc6a屉錩䭪叴쒟ታꥉ┗ࡗ㶤闎圥摴腕콙⍤춒뙎\ud932铝釈௙㽤莓ๅ 郠ह㓤뎓칇휊遮䜰䣜ޒꔔṆ▧뤺姺厦䡞縔藓ꢬ襑䳪㢞徳觚쩳ꮬ밦땅눕꨾┵ᬓꔞ盈푲乴篝惇袡ﷹᎍ㢡⇻⺶Ȁཱྀ폏〓㲡᭕蛰ᭀ쾲슊퐶䧥ꫤ魨擎ཆ 䚅譿뎡燩紐㑯턯ꏽἀ‱⊒ဌ즨晡⁃ᔌ䞡냆⁀豆䁈옗ꪌ枼칺蘑책懂\ud8f3ᕳ髪ﺙ㞯ᡂ怤욾䪘䫔匟Ẕ庪\ud997얰ؠﴂ怆‬욥蹦壄魥鞮ᤵ蓂딁㯱ᗣҨ넌ߖ愬笮틆\udbcbⱮ萊씐責唀꫅嬑걋Ğ\ud8a0䎬庱鈃栅汖\u0016욛Ნ㚙ꘀ鬕汲ᑂ兣콬嵞瀛帱脍׎㈀耆胡옎ᘐ࣡ঁ뎂砱怦ШḚ\udc01ఈ晢\ud80aγⷾ┮Ѓℊ퐞ꉴǦ寠҃ࢀ⸺勰ಀ⺸㵹✗힊焃竴铒媁쮅跪禿⺝⟈ꐫཉכ췯퉐ڃ⛨ꎪ汑嗅꫃屓焚棺鶤ꍱ匦偫㉅개劾侴௡䙨瞟膟蘏᠐烱섅︞㱦즀䚽賱뜃팞飽〿ຽ鉁﹨ꐑ牞얃沉ƺ┟᭒ꅒ葆煦偬䂿░俲寶उ双邖쀚ȀჀ¢眃䀡ƴீ࢘瞲㸏ꀀ胱ʽ螀烁픈⑯噙ﮌ˔⬀ᢂ㶌ᘑ⦭뢋ꊑᬆ悕䩎세⑩ፑ봩萦㷬톾酤⑜ᦐ皾쩝솜ꐼᔊꉖ㙦바Ә옃酨穢욬⡼袻ɜ\"⮣᳅켕ꒅᤔ䰡ܙ숔ꉨ纟륺髕꺩끠쎗โ㦓銗䃱뺉㳊ᢘ⪱襽ꔸ椡맹墟龍覅ᄺ媲︻懣㩜♺꡸鸓覲儹釥沙혁▵ፇ뉎뙳ᶎꐷ쀇Ȱ࣠㌀簡鐂〯,Ⴌ߈ꩉ앰싉鉿\ud837䞟㐸ꀂ쎉謡룥콒姨ұ䞖剕耉謠᐀峃讍怩䧱䘼ᔌ쨂졍嘦䧑⇢໌뒸䐢㠄㠯븿숳豁넄巢箌䚪೵发螆ꕹ콐甄頵ゎᶀ㣦覃밦頚⁤腺洴㜠햸瞔⤱⻦዗郌Ԓ详Ї㎥ᤚ苜ຸ✓謹磚撛菚ᦸᛡ宇㩽뢎輦௨满ᗎ鉏뢰䇧遞挼끁阫䁷ꖔְḀ㴂괚〠쁭ɰÐᒀ吃ꥩ鸄䃙辞☒ᘃ钝陜昮ᔀ꙱ꮆ㒞禠껹앞殖梮엄ḗ⬭妫碩╠岮帗랥蓌齋㠖㷚඗\udc75\ude5aࡄΎ᪜댂過䄥Ү毚⏤긲팆䔉肧►瀾霦Ӆ뱟껻曯ᔏ둚ヸ癱䆧왆䑂톫쀝\ud909묄䢐ὲﳸ栋䰒 㡶ϐᲀ댁採䀔ჼ肵蹰ሀ됌쀺⧂䔌Ε虀㌑射\ud877룉ᖃ释ꎞ艅쫄㭜굊䰜뒧冁㤪焹\udb0a鎑䉹㧗Ӑ鹤䜩國艃摃슭나쒉㶑∺붬⩈裴鋆芣ꅪ꤃ͥ㲏酕謜㴄丨⋻昣ꬎ蒹쇺檝⹊褤ᔤ戀⮅溈硕>ᝐ崲綁嚥\ud9c2瘼䃞௮羹ࠂޜṎ¡仪䑹钪쮚抍վ큽Ὺ塜膦䗍舴屡醆邗ѩ䚓帲鑓ᓌ圱䁹䇤螗좚槞猖䩙㥤\ud9a7噋夞榵珕쑚卜ꖤ뗁婻尵ꗖ鷗⍩䮓㚘㜛楻遶鞢婑䍘褹䞘髣냩肙刘떒ꫨ窗蕑⸦캝呼卾턹凔礤ꂡ캨㵢䦓홾ꪳ෾๘枡츝凉㯴Ճ㧠Ⓜﮁ㐈킩苻蒐Ợ횄휦墳ゆ砗쐩嬥煠牐倗╺졺ጌ➡阩㲋녱㄁쿉扠區\udc05큂悋扛ᘩ䱀ꑫဆ䠆⁯ˈ➀ഐ밁塁漂怽φདᰀ౪✑먹样荌⫼\uda11ﴀ庵树厌ો鬚㧆ꁞꁫ䦒⮴鮸䥙䊺恛禁ԃ▗ᙠ冎➆貞惡ؓ❞ᨱ杙淇砈脛ꊙϵ餅ꌅ欤縜殛쉙탾ᒅ豅佻萕뉤䅱ば孝㜅묦켑ᬟդ銴쓢謢∔꼘ᚚ៤ꮶ璅셆㲗ⅅ᜘減誅䣺㽢紆薶ꍨ嗒걬찏瀆죿≴ીഐ倃䚇考䁾ᮜ̐ɐ漁另‴䄸帎款䎝샠斆에␩‌蹜鄁ᐩᐑ儎붹悝蹍⧻ل千뇁邟ᅦ빤ᩤ嬩椗厑酞豙ᗝꂉṅ炔⩤類苆ꋁ 哳᳌팈”삉숧᭠圲㓊送무儹羾ꅄ⢐햔륢鄟멥辔而沈¯陴໹查炕皗衖립꘸麹祆墙좒Ặ⚛郢禹䉩呡╮✒嫈枉෻⺚䞯襎ᕇꛩ滤볁茐ȰᖐꝄꠅ​䀙¨Ґ㢤㐃䀝ӡ铜♹쾤螣桜礅③안ㅉ裣륕硈ᙔ鱖岊冖ᖕꁄ旱铠尫蝉ꠚⷢ饑֖ጌ驁毦㖕녘얹鑐嶱窮殕\ude1b⚈櫁畴궕灝ၢ゘ɉ̄듀㥼ᅃ霅겡㗉뜥֚ᇴ実悡懱뎔⏯㥩䄤䚃貈㢔ꮔ儚\ud83a惀Ꚃ鐰㠩邧䊕‬⧰꘢鍰㈩ꢥ尌⇽ៃᡨෆ홒靄⾿薤ꚋ䔩℗氐㮸䔠唼ꔑ徖᎝䉙金娡厣♅찦\ud91e愮䖐젔唱韁⓰ᬕ灚ަ㉀ᤉ搎䆂⓴쒈띕ꋤ쎮⹐终詴勅睅ᗆ抝핯ǭ困Ǖ徻墣䅸씶熥쑩⦕鐉敵閶埙壥崄欕㾐䵪꺴ᗺ颲iƒ᱒ᤌ山瀐䝠㑤᜕ᥝ煹㔀䉓啥䶕癔\udc00镉̼凪毅敳뱙圗씵瀖郗ㅩ쵳隖휕椝狖闗ͩ뵰䉐㜫槃烂岎輪ؤ攟採⇽ꛥ᎟빑剕ᔕ襷躥䟉哢恎긧㈞镶湉掹쵅쓡멇繸飮鰨匥䱸쒉䒔탲͍ĴŹ\udee2ਖ਼㐄ꗚ秇騀㯑↖穛طꗖ曨ษ⼀︣㨌㡯t㆞誱㓎䆗ꀂᥘ敂⮮ḕ䅙秚왞鱶ם⛠劁媊啤頚饐쥵撌陁壉\ud996偞홞敭\ud975鉤ꂉ谐\udc44ᙌ᫸Ẳ羁ꍧ縞㙯韾ᴶ擱추㙌䄵啈搦ੀ˱濬뱳喩܎嶶棴掔㲐癓쥺ᢼ镽胕⟄ᄖ籥\ud923圤ଐᚅ熺뽣ꅼ쥈\ud902컀⯀刀턏퀕ᖭތ೹寀ἡ딮ℍ쉀읹棁ᢦ〬汲ʰࡠ⑀܂௪⾷嘄幊灅U掕畽쨷啩ᨻ렕쐥쑞⌁鄇\udb24圅瀪ࡖᯣ乵鄟坤忊匹훸뎞䢠襎Ƞ䜜뻌셣鞁厇☉΋씡먠ಠ讗≃ᗪ꘨齅娵\udaa4熒ഔ 횃掀ᠶ皜龦릙䝛宮涵ᘦ쵤湨篘鯣ꮵ厧뭜ꕧ떪园橉澵赇ꉯ◺囒哬醕怘샮គ쀠˒ഀ֑逐눿问ᮕ뽣䞓鉬礓㦔酒硥钱̃䬽䦵☗ព勡⴦䕘\udd64\udecd햕髝塕抻喕\udd71Ԙ홞즙回ϕፓ镅䷓❩꧀鿰ꗑ佐셛韷ᩕ卥気Đ붘ᄌ၏㨠᠒⣤핹짢ᖟ埜벀㜥뀆靖僅벅\ud847停효已窅莂 햷앯窺ᤂ瀂퀍ႬŜԀᴀﲂ蠆䃇Εꊰᛀ⌁삕땼뤻哵ꉠᘌ䠀骛滘㚠驵忥鋹氟\udb9a醻ۣ邯鷕掸㵗ꑓ헰咽壃嗂찴짛롰푑匲藀끇밌橁틞䞼Ⓖ纉胯ဳ瀬ᅏ洕⟙죘赘冲㚴嘟芍┴屢큸μ\ud9f3烵හ筁ㅡꐦ喼ף侍⨁䀀䴱ᦔఓ䌵麥녖橁\ude3bᙑ黍䑜䆑᱒ᩏ㗡ꟳ巹ꗅ୛쭷贀ꀊ\udfe3恍ꊵ젂ꀬ뗫ᗀচ抵㦧⭟驝岅꘵췀३斦뗉婵榝珖鏗ˤ蛔뚔㜎홨텭嶎҄颔䡊◙\ude48䘥㉗躗╦Ḗ啮嗹㭙ퟤ䞷襚嚮髟讹㒗Қᵷ兹鄱䘠䍇㨯절끲4ݺ뱀鿓❗瑻㥾鏺寑㊔藈ُ턧ꒁ醆頙䃇ᢘ꫁鴌䑀ࡧ쌗ొ᥿憆䘱猖v廞磜巎쑥צ䱧稔쑅딙듄躈쵓ʱ䋆晦쀄仝虄⻜撯ꭘ弙ছ䁓懂撶ᣀ猬ꥑ䬚ࠤ餌⧋Ⴑ⼈뉧Ȃ걈咊敢䵞ꩦ倆馆웇쎦槨穤晍놦杶ὗ뮼鰇⾒ X₅膨胢㦈蘒嘈\f蠛ੑ䎦ɘ█ր⢋戒吥捕誖♵਄坬ꁜ敵푤택扥맆閘膣ᵻ薠浖橕ꔵ饯억鳝깕㔵ᷣᠤ剷ၕ䫉䕗ඕ奤芵鐽哙洴춝뉧䵻⓴퓠Ⓖ湑䅈㍑㘡Ẽ娑刖彛㍯唋㒝齽䟉ᝧᄒ辐璛㝬탶缘잓ᆃဍì˸澠✀퓸栆렀聤ÑƠކᢁ䁃䐋㑱峌頎؁ం—恟霝寳渍嶻鵐䍨䕀坝垂淕恖㊛ᅣ퉐垐鑤洍킷탛୿䙌㙂ꊅ欉㽗㎖護胟郴챉଄⷏㠵⢻쀲舖㥀屁䤒룤듬攣墹풵ㅙ䭽⪧ᠲ\ud883鷱ः빃\u0014崱琓%嚍雔ۓ깘闺㖢塮䣩୙躝襋뗑됩僈䄥훤⛗呒墦\ud8e3唥穗ݝ疻货惜ȃꛥ滀栋〳0ͰƄీ鰀ꠌ䘨䶧鞍诩턵嚤嘈嗡韅姆봝姆뇓ᕋ畱囑큓杵쥗㹥宙䶵읔햤꓉㠚奌族壙犝ᯔ흉問Աќ䕅䤰꒓ᕤ㍘藺璎傔뭕錷᧑葡\ud937휝靽勍荔곐륕\ud914슃軽敁¦\udf4b덼䃻㘜\udc73槍峐耵촸˜\udf73揍瀵ज街졠ᒀ렲륇ᝊৄ㆒钗縍勺ნ୎㥃맒遂緕✆䅔坧ฆ歹풅崹曹Э䗕睡冄漤ʢ瓎⼞顗ꇇ௉⪢ṁ쐋閴櫀눶쟗徾뒵ෙ⹈\uddcd婬傃䗆ꫵ饅\u0006뵚\ud827䘽\udf99狟㈝\udd0f矜ӷ䯝潴緕â뚄켟猵㊴漢⭐榊띳婱張醤筎ꭺ屓ϝ튰⏝ᐃ㷚\udd3dɽ\uddf7熭俥髑圅귕煚\udbf1涭ɕ굳궺횺\ude09罜麷䉚㜯괚\uddae梕昤蛞띃뗆Ꮇ妹筵뭙従ↇ窕撔㣝졥\udd41프鈝紥ꓣ魚몂ۑꙂ᐀欢ꘃ픴呹ǻⲸ✸뻢ᠭ᪝Ⓘ̐ᡆ뎐됇㄀㶞噊媝厡곔憩⁇ﵟ谴ᜰ子뺁풒ǈᗩ囨衴\udc07쓖鐦࿒觐嬟젪␾钶챀\uda20揱밎䃊Ő㊵ഃ౰坖耕畱㓗崕崝ꍸ㇚鍖֛蛤휏憁ᷖ霔轧᷊늣\ud995愵\ud955偑齈闟䴼Ԥ鏔䧐㙳䶆묰孷赥䯕홖ኢ鴬឴\udea0鳙⁇\udaee佦⩌飯ќഽ텈賑遅ॻ旑剧绱챙쏦登ᘼ埏攰\udf49⼯〢Ŝ̈́ၤȀ᛫《삏菲ր㫀൩ꐢ뀌䁶럳劽郦圔֜䥤Ē̞ી嫰䩂嶿闠\udff9冽ꥵკ嶤㐲飑錩륵僒乡酿⢙፯淁炶ౢ澝쉎ᆅ悩蔗믒誯⑌刴윍誨긱貞ྉⵌᒑ닜줤緐蝇퇑猕裖녛⃄\udd10勤㾐蔌鈀띟궩濫君擖莤ᮛ뽱赶▂憇饾ĸ鿑ﴬ蛘풛暕췺剛ꕝ﷼螻隗㯌\ude11쀋⨒䀣Ť濐㍁∃鰈\udbb3d鯷敄ｵↅፗ锱㝃艋ኁ砗෬퉐荐㶈\ud883ⱷ噻ᶈᏝ婕枇堐ꃳ㖘㠗ᴅ몺䧛㵥敫퓏液焽痒鏘붔싐臁㶃䉒佩䨳퓌댽髒돝ྙ鴜Ṷ叵홷煯됹퓟ჶ彲ꋵ倀獑촧㖜텳䬐㋴\udcd3뵠ᖐ㞣张㊺\ud877኱䐶韍䬄鐷꽟췥ం튤䲾₵鯚ն鄍೥\ud9f2ꬩ앵烯潛허咰\uda85䮽̎ﵔᛞㅚ욊詠踃匌☗嵗〭쎕똪碑ꪋ흊썐薪鬈䛃뇵䔖㝻ᗙശ赨뚎㹂 ꍘ白簌ࣄ 辂㤈項숶彜∕핟䅼㗶獜煨椑醜媫劮ⷷ屔ࣈ⍠趐Ĉ鶎숷㔊搈趢ⰿ䟅릤ꭝ歚뗿ᐺ퐉皵ₕ楆핺\udeda妵㢅꿟﷙䙜㾮綵蕅纇㥮氦ퟢ睆镧畼㎥恵᝛\udfd1푭혌问鸝媺禴ᛒ㑖¡䆀ీՅ❒䓘ཪ⎺稠㮱䄸螥ƒ\udb4f梠旀ฆ嘀萃Ŏ✒꠬\udf06就䡥橒䒷聆憒Ҥ߼鮠굀넕ᢞ怦ࠀ⌠㼵耀˖\u0003姒ᨪ䁳饱㠀ࠚ陫ং\u0000퍙쓂悀ʩ글Ǯ㾀팰챪萃孳톯䝰㘺騙ꕉ虡怴㎴ᆛ玑攮\ud99f⯎铅ꀓ䙇젴䋌Āᗀȃ谇뭩愇딛懆圱罐黑涯᧹程᥻捡䉦㭫筨駷뙋ᯱҙ갠뻝♻왾\udf26短ﻚ线영\udfac暙狇ฬà瞛ၦ斱끴妟ݑዕ휀歝䐽뢌恜䣪ԉ雕㻝椣툏鈸ꍌ껜瞔\udbc7歙璏ꏚꃱ銺˔쩄츽뷘듟ꃗක槄ꯕ⧞뵛֜辶喽伣棉則㸍ࣼ券㶽鴽ꌵ᧝違闵幧朽࿖粜﵊㸪输А쓬˳ꘇ ȓ赏鲐谀〒䑭͓ะཀ퀇‖\"ɴـᡝ斌耈뒸쁏톐ݹ㰠⤶㨼艳ꎫٶ뉝锎嵒潰ᖵผᙃ癝寕䌴㛁凐픹崍蓈⧎쫯樭쌏鐏厫䱗ዽЙၴ葅↘ᣍ쉓쾨䂼鈵ᘴ赆ꦛຍ큍炑ꃏ茹೐샐춫鼉睩쉗鰳浪╃ꑭ\ude1b䦹醵飔罅跏൘\udaf0ힵ픙─侮鐄\udfc3頄\u0000";
+            window.__GITBOOK_INITIAL_RENDER__ = true;
+            window.__GITBOOK_LAZY_MODULES__ = [];
+        </script>
+        
+                
+    </body>
+
+<!-- Mirrored from docs.tindmeet.ru/base/sozdanie-ankety by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Dec 2023 04:46:57 GMT -->
+</html>
